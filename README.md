@@ -14,17 +14,7 @@ Sistema di Matching:
     - [ ] Distanza geografica
     - [ ] Rating utenti
     - [ ] Urgenza richiesta
-    - [ ] Numero di libri coinvolti
-
-Funzionalità Extra:
-- [ ] Sistema di rating e feedback
-- [ ] Chat integrata per organizzare lo scambio
-- [ ] Suggerimenti automatici basati su:
-    - Libri precedentemente scambiati
-    - Preferenze di genere
-
-- [ ] Notifiche push/email per nuovi match
-- [ ] Sistema di punti/crediti per scambi non diretti
+    - [ ] Numero di libri coinvolti 
 
 Features di Sicurezza:
 - [ ] Sistema di segnalazione utenti
@@ -33,8 +23,18 @@ Features di Sicurezza:
 
 Features di Accessibilità
 - [ ] attenzione al numero di tab
-- [ ] link per saltare al contenuto
+- [ ] **link per saltare al contenuto**
 
 Aspetti Social:
 - [ ] Profili utente con storico scambi
 - [ ] Recensioni e feedback
+
+Funzionalità Extra:
+- [ ] Rete di follower/followed
+- [ ] Chat integrata per organizzare lo scambio
+- [ ] Suggerimenti automatici basati su:
+    - Libri precedentemente scambiati
+    - Preferenze di genere
+
+- [ ] Notifiche push/email per nuovi match
+- [ ] Sistema di punti/crediti per scambi non diretti???

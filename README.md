@@ -35,3 +35,6 @@
 - [ ] Sistema di segnalazione utenti
 - [ ] Notifiche push/email per nuovi match
 - [ ] ??? Sistema di punti/crediti per scambi non diretti
+
+## Note:
+- Riconsiderare più avanti come gestire le immagini (DB vs filepaths vs google as CDN)

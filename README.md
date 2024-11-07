@@ -30,7 +30,7 @@
 - [ ] Chat integrata per organizzare lo scambio
 - [ ] Suggerimenti automatici basati su libri precedentemente scambiati
 - [ ] Notifiche push/email per nuovi match
-- [ ] 
 
 ## Note:
 - Riconsiderare più avanti come gestire le immagini (DB vs filepaths vs google as CDN)
+- [suggerimenti citta](https://www.html.it/script/creazione-menu-a-discesa-con-lista-di-tutti-i-comuni-italiani/)

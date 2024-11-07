@@ -35,3 +35,5 @@
 - Riconsiderare più avanti come gestire le immagini (DB vs filepaths vs google as CDN)
 - [suggerimenti citta](https://www.html.it/script/creazione-menu-a-discesa-con-lista-di-tutti-i-comuni-italiani/)
 - [lista formale dei generi libri](https://www.bisg.org/complete-bisac-subject-headings-list)
+- Requisito: deve essere presente una forma di controllo dell’input inserito dall’utente, sia lato client che lato server → per lato server si potrebbe controllare se un utente che ha provato a registrarsi non abbia già un account
+- L'ideale è max 3 css, uno per screen, uno per print e uno handheld

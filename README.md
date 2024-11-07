@@ -6,6 +6,7 @@
 - [ ] Ricerca generica dei libri nel database
 - [ ] Ricerca tra i match
 - [ ] Ricerca case insensitive e parziale che aggiorna i risultati dopo tot tempo che non scrivo
+- [ ] Includere condizioni del libro
 
 ### Sistema di Matching:
 - [ ] Algoritmo di matching diretto (A ha libro che B vuole e viceversa)
@@ -18,8 +19,8 @@
 - [ ] Password salvata in hash
 
 ### Features di Accessibilità
-- [ ] attenzione al numero di tab
-- [ ] **link per saltare al contenuto**
+- [ ] Attenzione al numero di tab
+- [ ] **Link per saltare al contenuto**
 
 ### Aspetti Social:
 - [ ] Profili utente con storico scambi

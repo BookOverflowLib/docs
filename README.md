@@ -31,6 +31,7 @@
 - [ ] Chat integrata per organizzare lo scambio
 - [ ] Suggerimenti automatici basati su libri precedentemente scambiati
 - [ ] Notifiche push/email per nuovi match
+- [ ] Visualizzare quanto si ha risparmiato con gli scambi fatti
 
 ## Note:
 - Riconsiderare più avanti come gestire le immagini (DB vs filepaths vs google as CDN)

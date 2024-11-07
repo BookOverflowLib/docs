@@ -34,3 +34,4 @@
 ## Note:
 - Riconsiderare più avanti come gestire le immagini (DB vs filepaths vs google as CDN)
 - [suggerimenti citta](https://www.html.it/script/creazione-menu-a-discesa-con-lista-di-tutti-i-comuni-italiani/)
+- [lista formale dei generi libri](https://www.bisg.org/complete-bisac-subject-headings-list)

@@ -25,7 +25,7 @@
 
 ### Aspetti Social:
 - [ ] Profili utente con storico scambi
-- [ ] Recensioni e feedback
+- [ ] Recensioni
 
 ### Funzionalità Extra:
 - [ ] Rete di follower/followed

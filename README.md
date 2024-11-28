@@ -21,10 +21,11 @@
 ### Features di Accessibilità
 - [ ] Attenzione al numero di tab
 - [ ] **Link per saltare al contenuto**
+- [ ] Modalità high-contrast?
 
 ### Aspetti Social:
 - [ ] Profili utente con storico scambi
-- [ ] Recensioni e feedback
+- [ ] Recensioni
 
 ### Funzionalità Extra:
 - [ ] Rete di follower/followed

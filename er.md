@@ -31,8 +31,8 @@
 ## Scambio
 - **_emailProponente_** <!-- proponente dello scambio -->
 - **_emailAccettatore_** <!-- proponente dello scambio -->
-- **_IdCopia1_**
-- **_IdCopia2_**
+- **_IdCopiaProp_**
+- **_IdCopiaAcc_**
 - **dataProposta**
 - dataConclusione
 <!-- - stato  Enum: proposto, accettato, in attesa, concluso -->

@@ -13,11 +13,11 @@ La piattaforma permette anche di esplorare liberamente i libri disponibili nella
 La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri.
 Inoltre la piattaforma permette di navigare ed eseguire delle ricerche agli utenti nei seguenti casi:
 - l'utente sa di preciso cosa cerca, quindi può 
-  - popolare la sue lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina _match per te_ per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
+  - popolare la sua lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina _match per te_ per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
   - eseguire una ricerca mirata tramite la pagina _esplora tutti_;
 - l'utente sa vagamente cosa cerca, quindi ha due possibilità:
-  - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina
-  - aggiunge i suoi generi di interesse nella piattaforma, e successivamente accede alla pagina _esplora tutti_ dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi di interesse;
+  - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina _potrebbe piacerti anche_ per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente; 
+  - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina _esplora tutti_ dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
   - accede alla pagina
 - pesca a strascico
 - Boa di segnalazione

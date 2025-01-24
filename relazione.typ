@@ -11,27 +11,32 @@ La piattaforma permette anche di esplorare liberamente i libri disponibili nella
 
 == Target di utenza
 La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri.
-Inoltre la piattaforma permette di navigare ed eseguire delle ricerche nei seguenti casi:
-// TODO: riscrivere
-- Tiro perfetto
-- Trappola per argoste
-- Persca a strascico
-- Boa di segnalazione 
+Inoltre la piattaforma permette di navigare ed eseguire delle ricerche agli utenti nei seguenti casi:
+- l'utente sa di preciso cosa cerca, quindi può 
+  - popolare la sue lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina _match per te_ per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
+  - eseguire una ricerca mirata tramite la pagina _esplora tutti_;
+- l'utente sa vagamente cosa cerca, quindi ha due possibilità:
+  - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina
+  - aggiunge i suoi generi di interesse nella piattaforma, e successivamente accede alla pagina _esplora tutti_ dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi di interesse;
+  - accede alla pagina
+- pesca a strascico
+- Boa di segnalazione
 
 = Progettazione
 == Tipologie di utente
 In particolare abbiamo individuato le seguenti tipologie di utenti:
 - Utente non registrato:
   - Può conoscre la piattaforma tramite la pagina iniziale e le pagine di corredo che forniscono uteriori dettagli su di essa;
-  - Può visualizzare i libri presenti nella piattaforma tramite la pagina esplora, ma non avrà accesso ai suggerimenti personalizzati in quanto senza un account non è possibile definire i propri interessi;
+  - Può visualizzare i libri presenti nella piattaforma tramite la pagina _esplora_, ma non avrà accesso ai suggerimenti personalizzati in quanto senza un account non è possibile definire i propri interessi;
 - Utente registrato:
   - Può compiere tutte le azioni di un utente non registrato;
   - Può definire i propri interessi, tramite lista dei libri desiderati e/o generi preferiti;
   - Può visualizzare i suggerimenti personalizzati;
   - Può accedere alla funzionalità di scambio, sia come offerente che come richiedente;
-  // TODO: Verificare
-  - Può inserire delle recensioni sugli utente in relazione allo scambio;
+  // TODO: confermare?
+  - Può inserire delle recensioni sugli utenti in relazione ad uno scambio;
 - Amministratore:
   - Può compiere tutte le azioni di un utente registrato;
-  - Può gestire gli utenti registrati nella piattaforma;
+  - Può visualizzare gli utenti registrati nella piattaforma;
+  // TODO: confermare?
   - Può gestire gli scambi tra utenti della piattaforma;

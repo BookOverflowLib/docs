@@ -5,4 +5,33 @@ Indirizzo sito #link("https://tecweb.studenti.math.unipd.it/lribon")
 == Descrizione del prodotto
 Il prodotto consiste in una piattaforma web che permette ad ogni utente registrato di accedere ad un numero maggiore di libri, senza dover spendere ulteriore denaro e senza che la loro raccolta di libri occupi sempre più spazio.
 
-Per fare fronte al problema descritto il progetto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. 
+Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. Inoltre, per fornire un'aternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
+
+La piattaforma permette anche di esplorare liberamente i libri disponibili nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
+
+== Target di utenza
+La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri.
+Inoltre la piattaforma permette di navigare ed eseguire delle ricerche nei seguenti casi:
+// TODO: riscrivere
+- Tiro perfetto
+- Trappola per argoste
+- Persca a strascico
+- Boa di segnalazione 
+
+= Progettazione
+== Tipologie di utente
+In particolare abbiamo individuato le seguenti tipologie di utenti:
+- Utente non registrato:
+  - Può conoscre la piattaforma tramite la pagina iniziale e le pagine di corredo che forniscono uteriori dettagli su di essa;
+  - Può visualizzare i libri presenti nella piattaforma tramite la pagina esplora, ma non avrà accesso ai suggerimenti personalizzati in quanto senza un account non è possibile definire i propri interessi;
+- Utente registrato:
+  - Può compiere tutte le azioni di un utente non registrato;
+  - Può definire i propri interessi, tramite lista dei libri desiderati e/o generi preferiti;
+  - Può visualizzare i suggerimenti personalizzati;
+  - Può accedere alla funzionalità di scambio, sia come offerente che come richiedente;
+  // TODO: Verificare
+  - Può inserire delle recensioni sugli utente in relazione allo scambio;
+- Amministratore:
+  - Può compiere tutte le azioni di un utente registrato;
+  - Può gestire gli utenti registrati nella piattaforma;
+  - Può gestire gli scambi tra utenti della piattaforma;

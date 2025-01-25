@@ -21,6 +21,15 @@ La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria rac
 - l'utente preferisce esplorare in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
 - l'utente ha già individuato i libri di suo interesse, quindi può salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_.
 
+== Funzionalità
+=== Registrazione ed accesso
+La piattaforma permette agli utenti di registrarsi se lo desiderano, dopo aver compiuto la registrazione potranno accedere a sezioni e funzionalità dedicate agli utenti registrati.\
+Dopo aver completato la registrazione gli utenti potranno accedere tramite username o email, e password. \
+Inoltre sarà possibile uscire dall'account o eliminarlo completamente.
+=== Definizione degli interessi
+
+
+
 = Progettazione
 == Tipologie di utente
 In particolare abbiamo individuato le seguenti tipologie di utenti:

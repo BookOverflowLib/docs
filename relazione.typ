@@ -87,48 +87,65 @@ La base di dati è composta dalle seguenti tabelle:
   - lingua
   - path_copertina: percorso all'immagine di copertina
 - *Copia*
-  - ID: chiave primaria, viene usato un _AUTO_INCREMENT_ per garantire l'unicità
+  - ID: usato come chiave primaria in modo che un utente possa avere più copie dello sesso ISBN (cosa non possibile se usassimo (ISBN, proprietario) come chiave primaria); viene usato un _AUTO_INCREMENT_ per garantire l'unicità
   - ISBN: chiave esterna che fa riferimento a Libro
   - proprietario: chiave esterna che fa riferimento a Utente
   - disponibile: _BOOLEAN_ che rappresenta lo stato di disponibilità allo scambio della copia, utile se un utente vuole inserire tutta la sua collezione a prescindere e poi decidere quali libri scambiare
   - condizioni: _ENUM('nuovo', 'come nuovo', 'usato ma ben conservato', 'usato', 'danneggiato')_ che rappresenta lo stato di usura della copia
 - *Desiderio*
-  - email, ISBN: chiave primaria composta, chiavi esterne che collegano rispettivamente Utente e Libro
+  - email, ISBN: chiave primaria composta, chiavi esterne che si riferiscono rispettivamente Utente e Libro
 - *Scambio*
   - ID: chiave primaria, viene usato un _AUTO_INCREMENT_ per garantire l'unicità
   - emailProponente: identifica l'utente che propone lo scambio, chiave esterna che fa riferimento a Utente
   - emailAccettatore: identifica l'utente che riceve la proposta di scambio, chiave esterna che fa riferimento a Utente
-  - idCopiaProp, idCopiaAcc: rappresentano rispettivamente la copia fisica offerta da chi propone lo scambio e la copia fisica offerta da chi riceve la proposta, chiavi esterne che fanno riferimento a Copia
-  - dataProposta, dataConclusione: date di proposta e conclusione (la conclusione avviene in caso di accettazione o rifiuto) dello scambio, dataProposta ha _CURRENT_DATE_ come default per semplficare l'inserimento
+  - idCopiaProp, idCopiaAcc: rappresentano rispettivamente la copia fisica offerta da chi propone lo scambio e la copia fisica offerta da chi riceve la proposta; chiavi esterne che fanno riferimento a Copia
+  - dataProposta, dataConclusione: date di proposta e conclusione (la conclusione avviene in caso di accettazione o rifiuto) dello scambio; dataProposta ha _CURRENT_DATE_ come default per semplficare l'inserimento
   - stato: _ENUM('in attesa', 'accettato', 'rifiutato')_ che rappresenta lo stato dello scambio
 - *Recensione*
-  - emailRecensito: identificatore dell'utente che riceve la recensione, chiave esterna che fa riferimento a Utente
-  - idScambio: identificatore dello scambio a cui si riferisce la recensione, chiave esterna che fa riferimento a Scambio 
+  - emailRecensito: identificatore dell'utente che riceve la recensione; chiave esterna che fa riferimento a Utente
+  - idScambio: identificatore dello scambio a cui si riferisce la recensione; chiave esterna che fa riferimento a Scambio 
   - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplficare l'inserimento
-  - valutazione: valore intero (usiamo *TINYINT* per ottimizzare lo spazio occupato) compreso tra 1 e 5
-  - contenuto: testo della recensione, colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MySQL (di cui MariaDB è un fork) indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
+  - valutazione: valore intero (usiamo _TINYINT_ per ottimizzare lo spazio occupato) compreso tra 1 e 5
+  - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MySQL (di cui MariaDB è un fork) indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
 
 C'è poi un secondo schema che è stato utilizzato per la gestione delle posizioni geografiche, che è composto dalle seguenti tabelle:
 - regioni
 - province
 - comuni
-Abbiamo deciso di non integrare quest'ultimo assieme allo schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
+// TODO: confermare?
+Abbiamo deciso di non integrare quest'ultimo nello schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
 
+=== Header
+=== Breadcrumb
+=== Footer
 == Struttura del sito
+Nel sito tutte le pagine utilizzano lo schema a tre pannelli che risponde alle seguenti domande:
+- *Dove sono*? Informazione ottenibile tramite il _title_ o la _breadcrumb_;
+- *Dove posso andare*? Informazione ottenibile tramite la _navbar_; 
+- *Di cosa si tratta*? Informazione ottenibile tramite il _main_, ovvero il contenuto principale della pagina;
 === Home
+È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso.
 === Esplora
+Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _esplora tutti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
 ==== Esplora tutti
+Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri. 
+// confermare
+Gli utenti registrati possono filtrare i libri usando i generi preferiti tramite un apposito bottone.
 ==== Match per te
+Questa pagina permette di visualizzare i libri che corrispondono ai desideri dell'utente e che sono offerti da altri utenti a cui interessano i libri offerti dall'utente che esegue la ricerca.
 ==== Potrebbe piacerti anche
+Questa pagina permette di visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente che esegue la ricerca; questa pagina non contiene solo i libri che corrispondono ai desideri dell'utente ma tutti quelli che rispettano la condizione precedentemente definita in modo che l'utente possa considerare anche libri che non conosce e che quindi non ha inserito nella lista dei desideri.
 === Come funziona
+Pagina che fornisce ulteriori dettagli riguardo ad obbiettivi, vantaggi e una breve spiegazione del funzionamento della piattaforma. \
+Include anche un collegamento alla pagina di accesso.
 === Libro
+Questa pagina permette di visualizzare i dettagli di uno specifico libro, inoltre permette di visualizzare e di proporre uno scambio con gli utenti che possiedono una copia del libro.
+=== Accedi
+=== Registrati
 === Profilo
 ==== Modifica liste
 ==== Modifica generi
 ==== I tuoi scambi
-=== Header
-=== Breadcrumb
-=== Footer
 
 = Implementazione
 == Organizzazione del lavoro

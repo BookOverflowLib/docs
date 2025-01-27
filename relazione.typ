@@ -63,6 +63,57 @@ Abbiamo individuato le seguenti tipologie di utenti:
   // TODO: confermare?
   - Può gestire gli scambi tra utenti della piattaforma.
 
+== Base di dati
+// TODO: schema fatto bene con comune collegato?
+La base di dati è composta dalle seguenti tabelle:
+- *Utente*
+  - email: chiave primaria
+  - password_hash: hash della password dell'utente che comprende anche il salt
+  - username: nome utente univoco
+  - nome
+  - cognome
+  - provincia
+  - comune
+  - path_immagine: percorso all'immagine del profilo
+  - generi_preferiti: generi letterari preferiti dall'utente
+- *Libro*
+  - ISBN: chiave primaria, è un _VARCHAR(50)_ poiché Google Books API certe volte restituisce un ISBN non standard quindi per evitare il fallimento dell'inserimento abbiamo reso meno restrittiva la lunghezza
+  - titolo
+  - autore
+  - editore
+  - anno: anno di pubblicazione
+  - genere
+  - descrizione
+  - lingua
+  - path_copertina: percorso all'immagine di copertina
+- *Copia*
+  - ID: chiave primaria, viene usato un _AUTO_INCREMENT_ per garantire l'unicità
+  - ISBN: chiave esterna che fa riferimento a Libro
+  - proprietario: chiave esterna che fa riferimento a Utente
+  - disponibile: _BOOLEAN_ che rappresenta lo stato di disponibilità allo scambio della copia, utile se un utente vuole inserire tutta la sua collezione a prescindere e poi decidere quali libri scambiare
+  - condizioni: _ENUM('nuovo', 'come nuovo', 'usato ma ben conservato', 'usato', 'danneggiato')_ che rappresenta lo stato di usura della copia
+- *Desiderio*
+  - email, ISBN: chiave primaria composta, chiavi esterne che collegano rispettivamente Utente e Libro
+- *Scambio*
+  - ID: chiave primaria, viene usato un _AUTO_INCREMENT_ per garantire l'unicità
+  - emailProponente: identifica l'utente che propone lo scambio, chiave esterna che fa riferimento a Utente
+  - emailAccettatore: identifica l'utente che riceve la proposta di scambio, chiave esterna che fa riferimento a Utente
+  - idCopiaProp, idCopiaAcc: rappresentano rispettivamente la copia fisica offerta da chi propone lo scambio e la copia fisica offerta da chi riceve la proposta, chiavi esterne che fanno riferimento a Copia
+  - dataProposta, dataConclusione: date di proposta e conclusione (la conclusione avviene in caso di accettazione o rifiuto) dello scambio, dataProposta ha _CURRENT_DATE_ come default per semplficare l'inserimento
+  - stato: _ENUM('in attesa', 'accettato', 'rifiutato')_ che rappresenta lo stato dello scambio
+- *Recensione*
+  - emailRecensito: identificatore dell'utente che riceve la recensione, chiave esterna che fa riferimento a Utente
+  - idScambio: identificatore dello scambio a cui si riferisce la recensione, chiave esterna che fa riferimento a Scambio 
+  - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplficare l'inserimento
+  - valutazione: valore intero (usiamo *TINYINT* per ottimizzare lo spazio occupato) compreso tra 1 e 5
+  - contenuto: testo della recensione, colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MySQL (di cui MariaDB è un fork) indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
+
+C'è poi un secondo schema che è stato utilizzato per la gestione delle posizioni geografiche, che è composto dalle seguenti tabelle:
+- regioni
+- province
+- comuni
+Abbiamo deciso di non integrare quest'ultimo assieme allo schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
+
 == Struttura del sito
 === Home
 === Esplora
@@ -128,7 +179,7 @@ Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verific
 Lo scopo principale della piattaforma è quello di scambiare libri tra utenti, e attualmente, per questioni di implementazione, ci si rivolge all'utenza nel territorio italiano, per questo le *keyword scelte* sono: "scambio libri in Italia, libri, scambio, libri Italia, trova libri, BookOverflow".
 
 Per il tag *description* invece abbiamo individuato "BookOverflow è un sito web che
-permette di scambiare libri con altri utenti in Italia, trova subito il tuo prossimo scambio." che racchiude diverse keyword e una *call to action* stando al di sotto dei 150 caratteri. 
+permette di scambiare libri con altri utenti in Italia, trova subito il tuo prossimo scambio." che racchiude diverse keyword e una *call to action* stando al di sotto dei 150 caratteri.
 
 == Utilizzo delle intestazioni
 

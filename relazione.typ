@@ -13,12 +13,12 @@ La piattaforma permette anche di esplorare liberamente i libri disponibili nella
 La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri; inoltre la piattaforma permette di navigare ed eseguire delle ricerche agli utenti nei seguenti casi:
 - l'*utente sa di preciso cosa cerca*, quindi può
   - popolare la sua lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina "_match per te_" per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
-  - eseguire una ricerca mirata tramite il form di ricerca della pagina "_esplora tutti_".
+  - eseguire una ricerca mirata tramite il form di ricerca della pagina "_libri offerti_".
 - l'*utente sa vagamente cosa cerca*, quindi ha due possibilità:
   - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
-  - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_esplora tutti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
-  - accede alla pagina "_esplora tutti_" e filtrare la ricerca usando i parametri che preferisce.
-- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
+  - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_libri offerti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
+  - accede alla pagina "_libri offerti_" e filtrare la ricerca usando i parametri che preferisce.
+- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_libri offerti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
 - l'*utente ha già individuato* i libri di suo interesse, quindi può salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_.
 
 Si prevede un utilizzo tramite dispositivi con performance e dimensioni del display varie, quindi la piattaforma è stata progettata per essere responsive e performante sulla maggior parte dei dispositivi non considerati obsoleti.
@@ -134,11 +134,13 @@ Il footer è composto da dei link ad altre pagine del sito, logo e nome del sito
 === Home
 È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso.
 === Esplora
-Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _esplora tutti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
-==== Esplora tutti
+Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _libri offerti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
+==== Libri Offerti
 Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri. 
 // TODO: confermare
 Gli utenti registrati possono filtrare i libri usando i generi preferiti tramite un apposito bottone.
+==== Libri più scambiati
+Questa pagina permette di visualizzare i libri più scambiati nella piattaforma, è accessibile sia come utenti registrati che non.
 ==== Match per te
 Questa pagina permette di visualizzare i libri che corrispondono ai desideri dell'utente e che sono offerti da altri utenti a cui interessano i libri offerti dall'utente che esegue la ricerca.
 ==== Potrebbe piacerti anche
@@ -174,11 +176,16 @@ Altrimenti la pagina permette di:
 Questa pagina permette di visualizzare e scegliere i propri generi preferiti.
 ==== Modifica liste
 // TODO: confermare modifica disponibilità
-Le pagine di modifica delle liste permettono di visualizzare tutti i libri di quella lista e di modificare la disponibilità o eliminarli dalla lista. 
+Le pagine di modifica delle liste permettono di visualizzare tutti i libri di quella lista, modificare la disponibilità di quelli presenti, di aggiungerli o eliminarli dalla lista.
 ==== I tuoi scambi
 Questa pagina permette di visualizzare tutti gli scambi in cui l'utente è coinvolto, sia come proponente che come ricevente.
 
 Se l'utente è il proponente può annullare gli scambi in corso, se l'utente è il ricevente può accettare o rifiutare gli scambi in corso.
+=== 404
+Questa pagina viene visualizzata quando l'utente tenta di accedere ad una pagina che non esiste, contiene un messaggio di errore e un collegamento alla pagina iniziale.
+=== 500
+Questa pagina viene visualizzata quando si verifica un errore interno al server, contiene un messaggio di errore e un collegamento alla pagina iniziale.
+
 
 = Implementazione
 == Organizzazione del lavoro
@@ -218,7 +225,11 @@ Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verific
 
 == Frontend
 === Validazione
+
+
 == Backend
+=== Validazione
+=== Connessione al database
 
 
 = Accessibilità e usabilità
@@ -231,14 +242,18 @@ Lo scopo principale della piattaforma è quello di scambiare libri tra utenti, e
 Per il tag *description* invece abbiamo individuato "BookOverflow è un sito web che
 permette di scambiare libri con altri utenti in Italia, trova subito il tuo prossimo scambio." che racchiude diverse keyword e una *call to action* stando al di sotto dei 150 caratteri.
 
-== Utilizzo delle intestazioni
+== Performance
+La velocità di caricamento è un fattore fondamentale per migliorare la SERP, per questo abbiamo deciso di compiere le seguenti azioni per migliorare la performance del sito:
+- ottimizzazione del caricamento delle immagini comprimendole in formato *.AVIF*, questo permette di ridurre il peso delle immagini mantenendo una qualità discreta;
+- utilizzo di font più leggeri in formato *.woff2*;
+- *configurato il caricamento delle risorse* in HTML in modo che vengano caricati prima i font e le immagini necessarie per la visualizzazione della pagina;
+- utilizzo della clausola *_font-display: swap_* per garantire che il testo sia visibile anche se il font non è ancora stato scaricato;
+- utilizzo del tool *Google Lighthouse* per misurare le performance del sito e migliorarle;
+Non abbiamo minimizzato i file CSS e JavaScript perché la consegna richiede esplicitamente di non farlo.
 
-== Velocità di caricamento
-=== Ottimizzazione del caricamento delle immagini
-Per migliorare del performance si è deciso di comprimere le immagini convertendole in formato .AVIF, questo permette di ridurre il peso delle immagini mantenendo una qualità discreta.
+== Indicizzazione e alberatura 
+Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file contenenti dati sensibili, configurazioni, e script che vengono usati solo come utility.
 
-== Citazioni
-
-== Alberatura
+Per quanto riguarda l'alberatura del sito è stata tenuta il più possibile piatta mantenendo un livello di prondità massimo di 3 livelli.
 
 = Motivazioni delle scelte progettuali

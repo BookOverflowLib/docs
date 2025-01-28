@@ -115,21 +115,29 @@ C'è poi un secondo schema che è stato utilizzato per la gestione delle posizio
 // TODO: confermare?
 Abbiamo deciso di non integrare quest'ultimo nello schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
 
-=== Header
-=== Breadcrumb
-=== Footer
 == Struttura del sito
 Nel sito tutte le pagine utilizzano lo schema a tre pannelli che risponde alle seguenti domande:
 - *Dove sono*? Informazione ottenibile tramite il _title_ o la _breadcrumb_;
 - *Dove posso andare*? Informazione ottenibile tramite la _navbar_; 
 - *Di cosa si tratta*? Informazione ottenibile tramite il _main_, ovvero il contenuto principale della pagina;
+=== Header
+L'header è composto da:
+- *Logo*: il logo del sito;
+- *Titolo*: il nome del sito;
+- *Navbar*: contiene i collegamenti alle pagine principali del sito, ovvero _home_, _esplora_ e _come funziona_;
+- *Switch tema*: permette di cambiare il tema del sito tra chiaro e scuro;
+- *Accesso*: contiene il collegamenta alla pagina _accedi_ se l'utente non è autenticato, altrimenti contiene il collegamento al _profilo_;
+=== Breadcrumb
+La breadcrumb è presente in tutte le pagine del sito e permette all'utente di capire in che punto della gerarchia del sito si trova e alle pagine di livello superiore.
+=== Footer
+Il footer è composto da dei link ad altre pagine del sito, logo e nome del sito, ulteriori informazioni riguardo al sito e gli autori del sito.
 === Home
 È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso.
 === Esplora
 Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _esplora tutti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
 ==== Esplora tutti
 Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri. 
-// confermare
+// TODO: confermare
 Gli utenti registrati possono filtrare i libri usando i generi preferiti tramite un apposito bottone.
 ==== Match per te
 Questa pagina permette di visualizzare i libri che corrispondono ai desideri dell'utente e che sono offerti da altri utenti a cui interessano i libri offerti dall'utente che esegue la ricerca.
@@ -141,11 +149,36 @@ Include anche un collegamento alla pagina di accesso.
 === Libro
 Questa pagina permette di visualizzare i dettagli di uno specifico libro, inoltre permette di visualizzare e di proporre uno scambio con gli utenti che possiedono una copia del libro.
 === Accedi
+Questa pagina permette agli utenti di accedere alla piattaforma tramite username o email e password. 
 === Registrati
+Questa pagina permette agli utenti di registrarsi alla piattaforma, inserendo i dati richiesti ovvero: nome, cognome, provincia e comune dove ci si trova, username, email, password e conferma della password.
 === Profilo
-==== Modifica liste
+Se il profilo visualizzato non è quello dell'utente autenticato allora la pagina permette di:
+- visualizzare nome, cognome, posizione geografica, media delle valuazioni e immagine del profilo;
+- visualizzare i generi preferiti;
+- visualizzare i libri offerti e desiderati dall'utente;
+- contattare l'utente tramite email;
+Altrimenti la pagina permette di:
+- visualizzare nome, cognome, posizione geografica, media delle valuazioni e immagine del profilo;
+- visualizzare i generi preferiti;
+- visualizzare i libri offerti e desiderati dall'utente;
+// TODO: confermare
+- accedere alla pagina di modifica del profilo;
+- accedere alla pagina di modifica dei generi;
+- accedere alla pagina _i tuoi scambi_;
+- accedere alla pagina di modifica delle liste;
+- uscire dall'account;
+// TODO: confermare
+- eliminare l'account;
 ==== Modifica generi
+Questa pagina permette di visualizzare e scegliere i propri generi preferiti.
+==== Modifica liste
+// TODO: confermare modifica disponibilità
+Le pagine di modifica delle liste permettono di visualizzare tutti i libri di quella lista e di modificare la disponibilità o eliminarli dalla lista. 
 ==== I tuoi scambi
+Questa pagina permette di visualizzare tutti gli scambi in cui l'utente è coinvolto, sia come proponente che come ricevente.
+
+Se l'utente è il proponente può annullare gli scambi in corso, se l'utente è il ricevente può accettare o rifiutare gli scambi in corso.
 
 = Implementazione
 == Organizzazione del lavoro
@@ -184,7 +217,7 @@ Il lavoro è stato suddiviso nel seguente modo:
 Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verifica dell'accessibilità del sito.
 
 == Frontend
-
+=== Validazione
 == Backend
 
 

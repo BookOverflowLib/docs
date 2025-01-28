@@ -174,6 +174,7 @@ Altrimenti la pagina permette di:
 - uscire dall'account;
 // TODO: confermare
 - eliminare l'account;
+A fine pagina è presente anche una call to action che invita ad esplorare le possibilita di scambio.
 ==== Modifica generi
 Questa pagina permette di visualizzare e scegliere i propri generi preferiti.
 ==== Modifica liste
@@ -205,7 +206,7 @@ Il lavoro è stato suddiviso nel seguente modo:
   - Implementazione del database;
   - Implementazione delle API del database;
   - Implementazione del routing delle pagine;
-  - Implementazion del backend delle pagine riguardante interazione con il database e relativi controlli;
+  - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Ottimizzazione delle immagini;
   - Stesura della relazione;
 - Luca Ribon:
@@ -213,14 +214,14 @@ Il lavoro è stato suddiviso nel seguente modo:
   - Progettazione del database;
   - Implementazione del database;
   - Implementazione delle API del database;
-  - Implementazion del backend delle pagine riguardante interazione con il database e relativi controlli;
+  - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Stesura della relazione;
 - Matteo Bazzan:
   - Progettazione dell'interfaccia grafica;
   - Realizzazione dell'interfaccia grafica tramite HTML e CSS;
   - Implementazione delle API del database;
   - Implementazione del routing delle pagine;
-  - Implementazion del backend delle pagine riguardante interazione con il database e relativi controlli;
+  - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Implementazione degli script JavaScript per la gestione dei componenti grafici;
   - Stesura della relazione;
 Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verifica dell'accessibilità del sito.
@@ -235,6 +236,14 @@ Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verific
 
 
 = Accessibilità e usabilità
+== Palette colori
+La palette colori è stata costruita per garantire un contrasto sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi.
+
+Per costruire una prima palette di base abbiamo usato #link("https://coolors.co/"), successivamente è stata adattata per essere accessibile e in modo che i colori rispecchino il messaggio trasmesso dall'elemento a cui sono applicati. \
+Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #link("https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/")[WCAG Contrast Checker] che si basa sui requisiti di WCAG 2.2; grazie a questo strumento abbiamo constatato che la nostra palette rispetta il livello WCAG AAA.
+
+== Font
+// TODO: https://grtcalculator.com/ ???
 
 
 = SEO

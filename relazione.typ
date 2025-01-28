@@ -45,6 +45,8 @@ Gli utenti possono inserire delle recensioni sugli altri utenti in relazione ad 
 == Layout
 In fase di progettazione si è deciso di adottare un *layout responsive* che permette di variare le caratteristiche layout basandosi su degli intervalli di dimensione della finestra di visualizzazione; questo garantisce un'esperienza di navigazione ottimale su dispositivi con dimensioni e risoluzioni diverse.
 
+Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è stato progettato per essere fruibile su dispositivi mobili, tablet e desktop; così facendo abbiamo comunque reso il sito accessibile da dispositivi mobile senza sacrificare il layout desktop. 
+
 == Tipologie di utente
 Abbiamo individuato le seguenti tipologie di utenti:
 - Utente non registrato:

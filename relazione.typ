@@ -92,7 +92,7 @@ La base di dati è composta dalle seguenti tabelle:
   - ID: usato come chiave primaria in modo che un utente possa avere più copie dello sesso ISBN (cosa non possibile se usassimo (ISBN, proprietario) come chiave primaria); viene usato un _AUTO_INCREMENT_ per garantire l'unicità
   - ISBN: chiave esterna che fa riferimento a Libro
   - proprietario: chiave esterna che fa riferimento a Utente
-  - disponibile: _BOOLEAN_ che rappresenta lo stato di disponibilità allo scambio della copia, utile se un utente vuole inserire tutta la sua collezione a prescindere e poi decidere quali libri scambiare
+  - disponibile: _BOOLEAN_ che rappresenta lo stato di disponibilità allo scambio della copia, utile per indicare un libro che era nella lista dell'utente ma che è stato scambiato
   - condizioni: _ENUM('nuovo', 'come nuovo', 'usato ma ben conservato', 'usato', 'danneggiato')_ che rappresenta lo stato di usura della copia
 - *Desiderio*
   - email, ISBN: chiave primaria composta, chiavi esterne che si riferiscono rispettivamente Utente e Libro
@@ -233,7 +233,7 @@ Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'ut
 
 L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.\
 Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
-
+=== Stampa
 
 == Backend
 === Validazione
@@ -250,6 +250,7 @@ Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #lin
 == Font
 // TODO: https://grtcalculator.com/ ???
 
+== Compatibilità
 
 = SEO
 == Scelta di keyword e description
@@ -272,4 +273,5 @@ Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file
 
 Per quanto riguarda l'alberatura del sito è stata tenuta il più possibile piatta mantenendo un livello di prondità massimo di 3 livelli.
 
-= Motivazioni delle scelte progettuali
+= Altre motiviazioni progettuali
+== Warning nel console log

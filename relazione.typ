@@ -56,19 +56,16 @@ Si prevede un utilizzo tramite dispositivi con performance e dimensioni del disp
 == Funzionalità
 === Registrazione e accesso
 La piattaforma offre agli utenti la possibilità di registrarsi per accedere a sezioni e funzionalità personalizzate.\
-Una volta completata la registrazione, gli utenti potranno effettuare il login utilizzando il proprio username o email, accompagnati da una password.\
+Una volta completata la registrazione, gli utenti potranno effettuare il login utilizzando il proprio username o email, assieme alla propria password.\
 È inoltre prevista la possibilità di disconnettersi dal proprio account o di eliminarlo in modo permanente.\
 === Personalizzazione dell'esperienza
 La piattaforma consente agli utenti di personalizzare la propria esperienza attraverso la definizione di interessi specifici, tra cui l'inserimento di libri nella lista dei desideri e l'indicazione dei generi letterari preferiti.
 
 Gli utenti possono inoltre catalogare i volumi già in loro possesso e quelli che intendono mettere a disposizione per lo scambio, creando così un inventario personale consultabile in qualsiasi momento.\
 === Ricerca e visualizzazione dei libri
-Il sistema offre la possibilità di consultare l'elenco completo dei libri registrati dagli utenti, comprendente sia le opere ricercate che quelle disponibili per lo scambio.
+La piattaforma adotta un sistema di suggerimenti personalizzati che, tenendo conto dei generi e titoli preferiti dall'utente, nonché dell'offerta disponibile, propone una selezione di libri in linea con i suoi interessi. \
 
-Per una navigazione ottimale, la piattaforma propone un sistema di suggerimenti personalizzati basato sui generi preferiti, sui titoli desiderati e sull'offerta disponibile dell'utente.\
-
-La funzionalità di ricerca permette infine di esplorare il catalogo liberamente.\
-È possibile effettuare ricerche per titolo, autore o ISBN. È infine prevista la possibilità di filtrare i risultati in base ai propri generi letterari preferiti.\
+Per una ricerca più mirata, gli utenti possono consultare l'elenco completo dei libri registrati, filtrando i risultati per titolo, autore, ISBN o genere. 
 === Scambi
 Se un utente è in possesso di un libro desiderato da un altro utente, può inviare una proposta di scambio.\
 L'utente ricevente potrà decidere se accettare o rifiutare la proposta attraverso un apposita interfaccia dedicata.

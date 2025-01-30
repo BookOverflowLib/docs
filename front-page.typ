@@ -13,13 +13,13 @@
 #text(size: 20pt, style: "italic")[Relazione progetto]
 #v(2em)
 #text()[
-  Luca Ribon - 2075517 - luca.ribon\@studenti.unipd.it - *Referente*
+  Bazzan Matteo - matteo.bazzan.1\@studenti.unipd.it - 2076422
 
-  Matteo Bazzan - 2076422 - matteo.bazzan.1\@studenti.unipd.it
+  Bernardello Alessandro - alessandro.bernardello.1\@studenti.unipd.it  - 2077674
 
-  Alessandro Bernardello - [matr] - [email]
+  Mathew Aleena - aleena.mathew\@studenti.unipd.it - 2068242
 
-  Aleena Mathew - [matr] - [email]
+  Ribon Luca - luca.ribon\@studenti.unipd.it -  2075516 - *Referente*
 ]
 
 #v(3em)
@@ -44,7 +44,8 @@
     [*Password*],
   ),
 
-  [Utente], [user], [user],
+  [User], [user], [user],
+  [Utente], [utente], [utente],
   [Amministratore], [admin], [admin],
 )
 

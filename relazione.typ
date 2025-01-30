@@ -34,7 +34,7 @@
 == Descrizione del prodotto
 Il prodotto consiste in una piattaforma web che permette ad ogni utente registrato di accedere ad un numero maggiore di libri, senza dover spendere ulteriore denaro e senza che la loro raccolta di libri occupi sempre più spazio.
 
-Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. Inoltre, per fornire un'aternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
+Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di loro interesse e che desiderano libri in possesso dei primi. Inoltre, per fornire un'alternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
 
 La piattaforma permette anche di esplorare liberamente i libri disponibili nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
 
@@ -118,7 +118,7 @@ La base di dati è composta dalle seguenti tabelle:
   - lingua
   - path_copertina: percorso all'immagine di copertina
 - *Copia*
-  - ID: usato come chiave primaria in modo che un utente possa avere più copie dello sesso ISBN (cosa non possibile se usassimo (ISBN, proprietario) come chiave primaria); viene usato un _AUTO_INCREMENT_ per garantire l'unicità
+  - ID: usato come chiave primaria in modo che un utente possa avere più copie dello stesso ISBN (cosa non possibile se usassimo (ISBN, proprietario) come chiave primaria); viene usato un _AUTO_INCREMENT_ per garantire l'unicità
   - ISBN: chiave esterna che fa riferimento a Libro
   - proprietario: chiave esterna che fa riferimento a Utente
   - disponibile: _BOOLEAN_ che rappresenta lo stato di disponibilità allo scambio della copia, utile per indicare un libro che era nella lista dell'utente ma che è stato scambiato
@@ -263,7 +263,7 @@ Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'ut
 L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.\
 Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
 === Stampa
-
+Per ogni pagina viene incluso un layout di stampa, che riorganizza le informazioni principali dalla pagina sistemandole in un formato adeguato, principamente rimuovendo i colori di background non necessari per la stampa. 
 == Backend
 === Validazione
 === Connessione al database

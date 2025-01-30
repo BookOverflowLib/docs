@@ -139,7 +139,7 @@ La base di dati è composta dalle seguenti tabelle:
   - idScambio: identificatore dello scambio a cui si riferisce la recensione; chiave esterna che fa riferimento a Scambio
   - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplficare l'inserimento
   - valutazione: valore intero (usiamo _TINYINT_ per ottimizzare lo spazio occupato) compreso tra 1 e 5
-  - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MySQL (di cui MariaDB è un fork) indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
+  - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MariaDB indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
 
 C'è poi un secondo schema che è stato utilizzato per la gestione delle posizioni geografiche, che è composto dalle seguenti tabelle:
 - regioni

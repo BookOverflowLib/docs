@@ -234,7 +234,7 @@ Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'ut
 L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.\
 Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
 === Stampa
-
+Per ogni pagina viene incluso un layout di stampa, che riorganizza le informazioni principali dalla pagina sistemandole in un formato adeguato, principamente rimuovendo i colori di background non necessari per la stampa. 
 == Backend
 === Validazione
 === Connessione al database

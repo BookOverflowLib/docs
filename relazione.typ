@@ -1,5 +1,34 @@
-Indirizzo email referente: #link("mailto:lucaribon0203@gmail.com") \
-Indirizzo sito #link("https://tecweb.studenti.math.unipd.it/lribon")
+#include "front-page.typ"
+
+#set page(
+  margin: (top: 4cm, bottom: 4cm, left: 2cm, right: 2cm),
+  header: [
+    #grid(
+      align: horizon,
+      columns: (1fr, 1fr),
+      align(left)[#image("/assets/imgs/logo.svg", width: 2em)], align(right)[BookOverflow],
+    )
+    #line(length: 100%, stroke: 0.5pt)
+  ],
+  numbering: "1",
+  footer: [
+    #align(center, line(length: 15%))
+    #context { align(center, counter(page).display(page.numbering)) }
+  ],
+)
+#counter(page).update(1)
+#set page(numbering: "1")
+#set par(justify: true, linebreaks: "optimized", first-line-indent: 1em)
+#set align(left)
+#set heading(numbering: "1.")
+#show heading.where(level: 1): it => {
+  pagebreak(weak: true)
+  align(center, it)
+}
+#show heading: it => [
+  #it
+  #v(0.5em)
+]
 
 = Analisi
 == Descrizione del prodotto
@@ -45,7 +74,7 @@ Gli utenti possono inserire delle recensioni sugli altri utenti in relazione ad 
 == Layout
 In fase di progettazione si è deciso di adottare un *layout responsive* che permette di variare le caratteristiche layout basandosi su degli intervalli di dimensione della finestra di visualizzazione; questo garantisce un'esperienza di navigazione ottimale su dispositivi con dimensioni e risoluzioni diverse.
 
-Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è stato progettato per essere fruibile su dispositivi mobili, tablet e desktop; così facendo abbiamo comunque reso il sito accessibile da dispositivi mobile senza sacrificare il layout desktop. 
+Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è stato progettato per essere fruibile su dispositivi mobili, tablet e desktop; così facendo abbiamo comunque reso il sito accessibile da dispositivi mobile senza sacrificare il layout desktop.
 
 == Tipologie di utente
 Abbiamo individuato le seguenti tipologie di utenti:
@@ -105,7 +134,7 @@ La base di dati è composta dalle seguenti tabelle:
   - stato: _ENUM('in attesa', 'accettato', 'rifiutato')_ che rappresenta lo stato dello scambio
 - *Recensione*
   - emailRecensito: identificatore dell'utente che riceve la recensione; chiave esterna che fa riferimento a Utente
-  - idScambio: identificatore dello scambio a cui si riferisce la recensione; chiave esterna che fa riferimento a Scambio 
+  - idScambio: identificatore dello scambio a cui si riferisce la recensione; chiave esterna che fa riferimento a Scambio
   - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplficare l'inserimento
   - valutazione: valore intero (usiamo _TINYINT_ per ottimizzare lo spazio occupato) compreso tra 1 e 5
   - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MySQL (di cui MariaDB è un fork) indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
@@ -120,7 +149,7 @@ Abbiamo deciso di non integrare quest'ultimo nello schema principale perché vie
 == Struttura del sito
 Nel sito tutte le pagine utilizzano lo schema a tre pannelli che risponde alle seguenti domande:
 - *Dove sono*? Informazione ottenibile tramite il _title_ o la _breadcrumb_;
-- *Dove posso andare*? Informazione ottenibile tramite la _navbar_; 
+- *Dove posso andare*? Informazione ottenibile tramite la _navbar_;
 - *Di cosa si tratta*? Informazione ottenibile tramite il _main_, ovvero il contenuto principale della pagina;
 === Header
 L'header è composto da:
@@ -142,7 +171,7 @@ Questa pagina permette di visualizzare i libri che corrispondono ai desideri del
 ==== Potrebbe piacerti anche
 Questa pagina permette di visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente che esegue la ricerca; questa pagina non contiene solo i libri che corrispondono ai desideri dell'utente ma tutti quelli che rispettano la condizione precedentemente definita in modo che l'utente possa considerare anche libri che non conosce e che quindi non ha inserito nella lista dei desideri.
 ==== Libri Offerti
-Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri. 
+Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri.
 // TODO: confermare
 Gli utenti registrati possono filtrare i libri usando i generi preferiti tramite un apposito bottone.
 ==== Libri più scambiati
@@ -153,7 +182,7 @@ Include anche un collegamento alla pagina di accesso.
 === Libro
 Questa pagina permette di visualizzare i dettagli di uno specifico libro, inoltre permette di visualizzare e di proporre uno scambio con gli utenti che possiedono una copia del libro.
 === Accedi
-Questa pagina permette agli utenti di accedere alla piattaforma tramite username o email e password. 
+Questa pagina permette agli utenti di accedere alla piattaforma tramite username o email e password.
 === Registrati
 Questa pagina permette agli utenti di registrarsi alla piattaforma, inserendo i dati richiesti ovvero: nome, cognome, provincia e comune dove ci si trova, username, email, password e conferma della password.
 === Profilo
@@ -268,7 +297,7 @@ La velocità di caricamento è un fattore fondamentale per migliorare la SERP, p
 - utilizzo del tool *Google Lighthouse* per misurare le performance del sito e migliorarle;
 Non abbiamo minimizzato i file CSS e JavaScript perché la consegna richiede esplicitamente di non farlo.
 
-== Indicizzazione e alberatura 
+== Indicizzazione e alberatura
 Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file contenenti dati sensibili, configurazioni, e script che vengono usati solo come utility.
 
 Per quanto riguarda l'alberatura del sito è stata tenuta il più possibile piatta mantenendo un livello di prondità massimo di 3 livelli.

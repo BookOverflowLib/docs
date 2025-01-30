@@ -18,7 +18,7 @@
 )
 #counter(page).update(1)
 #set page(numbering: "1")
-#set par(justify: true, linebreaks: "optimized", first-line-indent: 1em)
+#set par(justify: true, linebreaks: "optimized", first-line-indent: 0.5em)
 #set align(left)
 #set heading(numbering: "1.")
 #show heading.where(level: 1): it => {

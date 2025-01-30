@@ -25,7 +25,7 @@
   pagebreak(weak: true)
   align(center, it)
 }
-#set text(hyphenate: false)
+#set text(lang: "it")
 #show heading: it => [
   #it
   #v(0.5em)

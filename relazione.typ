@@ -54,21 +54,25 @@ Si prevede un utilizzo tramite dispositivi con performance e dimensioni del disp
 
 == Funzionalità
 === Registrazione e accesso
-La piattaforma permette agli utenti di registrarsi se lo desiderano, dopo aver compiuto la registrazione potranno accedere a sezioni e funzionalità personalizzate.\
-Dopo aver completato la registrazione gli utenti potranno accedere tramite username o email, e password. \ Inoltre sarà possibile uscire dall'account o eliminarlo completamente.
+La piattaforma offre agli utenti la possibilità di registrarsi per accedere a sezioni e funzionalità personalizzate.\
+Una volta completata la registrazione, gli utenti potranno effettuare il login utilizzando il proprio username o email, accompagnati da una password.\
+È inoltre prevista la possibilità di disconnettersi dal proprio account o di eliminarlo in modo permanente.\
 === Personalizzazione dell'esperienza
-La piattaforma permette agli utenti di definire i propri interessi, tramite la lista dei libri desiderati e/o i generi preferiti.
+La piattaforma consente agli utenti di personalizzare la propria esperienza attraverso la definizione di interessi specifici, tra cui l'inserimento di libri nella lista dei desideri e l'indicazione dei generi letterari preferiti.
 
-Inoltre viene data la possibilità di definire i libri in possesso e quelli che si intendono offrire in scambio.
+Gli utenti possono inoltre catalogare i volumi già in loro possesso e quelli che intendono mettere a disposizione per lo scambio, creando così un inventario personale consultabile in qualsiasi momento.\
 === Ricerca e visualizzazione dei libri
-La piattaforma permette agli utenti di visualizzare i libri registrati, ovvero quelli che gli utenti desiderano o offrono in scambio. Se sono definiti generi preferiti, libri desiderati e libri offerti sarà possibile visualizzare i suggerimenti personalizzati.
+Il sistema offre la possibilità di consultare l'elenco completo dei libri registrati dagli utenti, comprendente sia le opere ricercate che quelle disponibili per lo scambio.
 
-Inoltre è possibile esplorare i libri presenti nella piattaforma tramite la funzione di ricerca che prevede anche l'utilizzo di filtri.
+Per una navigazione ottimale, la piattaforma propone un sistema di suggerimenti personalizzati basato sui generi preferiti, sui titoli desiderati e sull'offerta disponibile dell'utente.\
+
+La funzionalità di ricerca permette infine di esplorare il catalogo liberamente.\
+È possibile effettuare ricerche per titolo, autore o ISBN. È infine prevista la possibilità di filtrare i risultati in base ai propri generi letterari preferiti.\
 === Scambi
-È possibile avviare uno scambio con un utente se siamo in possesso di un libro che l'utente desidera. L'utente che riceve la proposta di scambio potrà decide se accettarla o meno.
+Se un utente è in possesso di un libro desiderato da un altro utente, può inviare una proposta di scambio.\
+L'utente ricevente potrà decidere se accettare o rifiutare la proposta attraverso un apposita interfaccia dedicata.
 === Recensioni
-Gli utenti possono inserire delle recensioni sugli altri utenti in relazione ad uno scambio, sia come proponenti che come riceventi della richiesta di scambio.
-
+Al termine di uno scambio, gli utenti possono lasciare una recensione sull'esperienza. Il sistema di feedback permette sia a chi offre che a chi accetta lo scambio di condividere la propria opinione, aiutando così gli altri utenti a scegliere con chi scambiare
 
 = Progettazione
 == Layout

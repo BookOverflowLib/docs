@@ -110,7 +110,7 @@ La base di dati è composta dalle seguenti tabelle:
   - path_immagine: percorso all'immagine del profilo
   - generi_preferiti: generi letterari preferiti dall'utente
 - *Libro*
-  - ISBN: chiave primaria, è un _VARCHAR(50)_ poiché Google Books API certe volte restituisce un ISBN non standard quindi per evitare il fallimento dell'inserimento abbiamo reso meno restrittiva la lunghezza
+  - ISBN: chiave primaria. È di tipo _VARCHAR(50)_ poichè l'API Google Books certe volte restituisce identificativi più lunghi di un ISBN standard. Utilizzare una stringa a lunghezza variabile ed un limite meno restrittivo ci permette di evitare errori durante l'inserimento.
   - titolo
   - autore
   - editore

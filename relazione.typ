@@ -47,16 +47,18 @@ La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria rac
 - l'*utente sa vagamente cosa cerca*, quindi ha due possibilità:
   - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
   - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_esplora tutti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
-  - accede alla pagina "_esplora tutti_" e filtrare la ricerca usando i parametri che preferisce.
-- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
-- l'*utente ha già individuato* i libri di suo interesse, quindi può salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_.
+  - accede alla pagina "_esplora tutti_" e filtrare i risultati tramite una ricerca.
+- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando tramite una ricerca.
+- l'*utente ha già individuato* i contenuti di suo interesse, quindi può:
+  - salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_;
+  - salvare i risultati di una ricerca tramite _bookmark_ dato che sia l'input di ricerca che l'utilizzo del filtro _generi preferiti_ vengono passati come parametri _GET_.
 
-Si prevede un utilizzo tramite dispositivi con performance e dimensioni del display varie, quindi la piattaforma è stata progettata per essere responsive e performante sulla maggior parte dei dispositivi non considerati obsoleti.
+Si prevede un utilizzo tramite dispositivi con performance e dimensioni del display varie, quindi la piattaforma è stata progettata per essere responsive e performante sulla maggior parte dei dispositivi.
 
 == Funzionalità
 === Registrazione e accesso
 La piattaforma offre agli utenti la possibilità di registrarsi per accedere a sezioni e funzionalità personalizzate.\
-Una volta completata la registrazione, gli utenti potranno effettuare il login utilizzando il proprio username o email, assieme alla propria password.\
+Una volta completata la registrazione, gli utenti potranno effettuare l'accesso utilizzando il proprio username o email, assieme alla propria password.\
 È inoltre prevista la possibilità di disconnettersi dal proprio account o di eliminarlo in modo permanente.\
 === Personalizzazione dell'esperienza
 La piattaforma consente agli utenti di personalizzare la propria esperienza attraverso la definizione di interessi specifici, tra cui l'inserimento di libri nella lista dei desideri e l'indicazione dei generi letterari preferiti.
@@ -65,12 +67,12 @@ Gli utenti possono inoltre catalogare i volumi già in loro possesso e quelli ch
 === Ricerca e visualizzazione dei libri
 La piattaforma adotta un sistema di suggerimenti personalizzati che, tenendo conto dei generi e titoli preferiti dall'utente, nonché dell'offerta disponibile, propone una selezione di libri in linea con i suoi interessi. \
 
-Per una ricerca più mirata, gli utenti possono consultare l'elenco completo dei libri registrati, filtrando i risultati per titolo, autore, ISBN o genere. 
+Per una ricerca più mirata, gli utenti possono consultare l'elenco completo dei libri registrati, filtrando i risultati per titolo, autore, ISBN o generi preferiti. 
 === Scambi
 Se un utente è in possesso di un libro desiderato da un altro utente, può inviare una proposta di scambio.\
 L'utente ricevente potrà decidere se accettare o rifiutare la proposta attraverso un apposita interfaccia dedicata.
 === Recensioni
-Al termine di uno scambio, gli utenti possono lasciare una recensione sull'esperienza. Il sistema di feedback permette sia a chi offre che a chi accetta lo scambio di condividere la propria opinione, aiutando così gli altri utenti a scegliere con chi scambiare
+Dopo l'accettazione di uno scambio, gli utenti possono lasciare una recensione sull'esperienza. Il sistema di feedback permette sia a chi offre che a chi accetta lo scambio di condividere la propria opinione, aiutando così gli altri utenti a scegliere con chi scambiare.
 
 = Progettazione
 == Layout
@@ -80,25 +82,26 @@ Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è st
 
 == Tipologie di utente
 Abbiamo individuato le seguenti tipologie di utenti:
-- Utente non registrato:
+- *Utente non registrato*:
   - Può conoscre la piattaforma tramite la pagina iniziale e le pagine di corredo che forniscono uteriori dettagli su di essa;
-  - Può visualizzare i libri presenti nella piattaforma tramite la pagina "_esplora_", ma non avrà accesso ai suggerimenti personalizzati in quanto senza un account non è possibile definire i propri interessi.
-- Utente registrato:
+  - Può visualizzare i libri presenti nella piattaforma tramite la pagina "_esplora_", ma non avrà accesso ai suggerimenti personalizzati in quanto senza un account non è possibile definire i propri interessi; di conseguenza non potrà accedere alle pagine "_match per te_" e "_potrebbe piacerti anche_";
+- *Utente registrato*:
   - Può compiere tutte le azioni di un utente non registrato;
   - Può definire i propri interessi, tramite lista dei libri desiderati e/o generi preferiti;
-  - Può visualizzare i suggerimenti personalizzati;
+  - Può visualizzare i suggerimenti personalizzati, ovvero "_match per te_" e "_potrebbe piacerti anche_";
   - Può accedere alla funzionalità di scambio, sia come offerente che come richiedente;
-  // TODO: confermare?
   - Può inserire delle recensioni sugli utenti in relazione ad uno scambio.
-- Amministratore:
-  - Può compiere tutte le azioni di un utente registrato;
+- *Amministratore*:
   - Può visualizzare gli utenti registrati nella piattaforma;
-  // TODO: confermare?
-  - Può gestire gli scambi tra utenti della piattaforma.
+  - Per ogni utente può viusualizzare gli scambi;
+  - Può eliminare gli utenti dalla piattaforma;
+  - Può accedere alla pagina "_esplora_" per verificare i libri prensenti nella piattaforma.
 
 == Base di dati
+Lo schema ER della base di dati è il seguente:
 // TODO: schema fatto bene con comune collegato?
-La base di dati è composta dalle seguenti tabelle:
+
+La base di dati è stata immplementata utilizzando MariaDB, ed è composta dalle seguenti tabelle:
 - *Utente*
   - email: chiave primaria
   - password_hash: hash della password dell'utente che comprende anche il salt
@@ -110,7 +113,7 @@ La base di dati è composta dalle seguenti tabelle:
   - path_immagine: percorso all'immagine del profilo
   - generi_preferiti: generi letterari preferiti dall'utente
 - *Libro*
-  - ISBN: chiave primaria. È di tipo _VARCHAR(50)_ poichè l'API Google Books certe volte restituisce identificativi più lunghi di un ISBN standard. Utilizzare una stringa a lunghezza variabile ed un limite meno restrittivo ci permette di evitare errori durante l'inserimento.
+  - ISBN: chiave primaria. È di tipo _VARCHAR(50)_ poichè l'API Google Books certe volte restituisce identificativi più lunghi di un ISBN standard. Utilizzare una stringa a lunghezza variabile ed un limite meno restrittivo ci permette di evitare errori durante l'inserimento
   - titolo
   - autore
   - editore
@@ -132,12 +135,12 @@ La base di dati è composta dalle seguenti tabelle:
   - emailProponente: identifica l'utente che propone lo scambio, chiave esterna che fa riferimento a Utente
   - emailAccettatore: identifica l'utente che riceve la proposta di scambio, chiave esterna che fa riferimento a Utente
   - idCopiaProp, idCopiaAcc: rappresentano rispettivamente la copia fisica offerta da chi propone lo scambio e la copia fisica offerta da chi riceve la proposta; chiavi esterne che fanno riferimento a Copia
-  - dataProposta, dataConclusione: date di proposta e conclusione (la conclusione avviene in caso di accettazione o rifiuto) dello scambio; dataProposta ha _CURRENT_DATE_ come default per semplficare l'inserimento
+  - dataProposta, dataConclusione: date di proposta e conclusione (la conclusione avviene in caso di accettazione o rifiuto) dello scambio; dataProposta ha _CURRENT_DATE_ come default per semplificare l'inserimento
   - stato: _ENUM('in attesa', 'accettato', 'rifiutato')_ che rappresenta lo stato dello scambio
 - *Recensione*
   - emailRecensito: identificatore dell'utente che riceve la recensione; chiave esterna che fa riferimento a Utente
   - idScambio: identificatore dello scambio a cui si riferisce la recensione; chiave esterna che fa riferimento a Scambio
-  - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplficare l'inserimento
+  - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplificare l'inserimento
   - valutazione: valore intero (usiamo _TINYINT_ per ottimizzare lo spazio occupato) compreso tra 1 e 5
   - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MariaDB indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
 
@@ -145,14 +148,16 @@ C'è poi un secondo schema che è stato utilizzato per la gestione delle posizio
 - regioni
 - province
 - comuni
-// TODO: confermare?
 Abbiamo deciso di non integrare quest'ultimo nello schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
 
 == Struttura del sito
 Nel sito tutte le pagine utilizzano lo schema a tre pannelli che risponde alle seguenti domande:
 - *Dove sono*? Informazione ottenibile tramite il _title_ o la _breadcrumb_;
-- *Dove posso andare*? Informazione ottenibile tramite la _navbar_;
+- *Dove posso andare*? Informazione ottenibile tramite la _navbar_ o il _footer_;
 - *Di cosa si tratta*? Informazione ottenibile tramite il _main_, ovvero il contenuto principale della pagina;
+Inoltre si trova risposta anche alle seguenti domande:
+- *Da chi è gestita questa pagina?* Informazione ottenibile tramite _footer_;
+- *Dove posso trovare informazioni più approfondite?* Informazione ottenibile tramite la pagina _come funziona_, pagina sempre raggiungibile tramite _navbar_.
 === Header
 L'header è composto da:
 - *Logo*: il logo del sito;
@@ -161,30 +166,29 @@ L'header è composto da:
 - *Switch tema*: permette di cambiare il tema del sito tra chiaro e scuro;
 - *Accesso*: contiene il collegamenta alla pagina _accedi_ se l'utente non è autenticato, altrimenti contiene il collegamento al _profilo_;
 === Breadcrumb
-La breadcrumb è presente in tutte le pagine del sito e permette all'utente di capire in che punto della gerarchia del sito si trova e alle pagine di livello superiore.
+La breadcrumb è presente in tutte le pagine del sito e permette all'utente di capire in che punto della gerarchia del sito si trova e quali sono le pagine di livello superiore rispetto a dove si trova.
 === Footer
-Il footer è composto da dei link ad altre pagine del sito, logo e nome del sito, ulteriori informazioni riguardo al sito e gli autori del sito.
+Il footer è composto da dei link alle altre pagine principali del sito, logo e nome del sito, una breve descrizione e gli autori. Inoltre è presente una *dichiarazione di non responsabilità* relativa all'utilizzo delle immagini ottenute tramite _Google Books API_.
 === Home
-È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso.
+È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso; il tutto viene completato da degli elementi decorativi.
 === Esplora
-Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _esplora tutti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
+Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alle pagine "_esplora tutti_" e "_libri più scambiati_" a utenti registrati e non, e alle pagine "_match per te_" e "_potrebbe piacerti anche_" solo agli utenti registrati.
 ==== Match per te
 Questa pagina permette di visualizzare i libri che corrispondono ai desideri dell'utente e che sono offerti da altri utenti a cui interessano i libri offerti dall'utente che esegue la ricerca.
 ==== Potrebbe piacerti anche
-Questa pagina permette di visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente che esegue la ricerca; questa pagina non contiene solo i libri che corrispondono ai desideri dell'utente ma tutti quelli che rispettano la condizione precedentemente definita in modo che l'utente possa considerare anche libri che non conosce e che quindi non ha inserito nella lista dei desideri.
-==== Libri Offerti
-Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli usando diversi parametri.
-// TODO: confermare
-Gli utenti registrati possono filtrare i libri usando i generi preferiti tramite un apposito bottone.
+Questa pagina permette di visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente che esegue la ricerca; non sono presenti solo i libri che corrispondono ai desideri dell'utente ma tutti quelli che rispettano la condizione precedentemente definita in modo che l'utente possa considerare anche libri che non conosce e che quindi non ha inserito nella lista dei desideri.
+==== Esplora tutti
+Questa pagina permette di visualizzare tutti i libri presenti nella piattaforma, e di filtrarli tramite la funzione di ricerca che cercherà corrispondeze per titolo, autore e ISBN.
+Inoltre gli utenti registrati possono filtrare i libri usando i loro generi preferiti tramite un apposito bottone.
 ==== Libri più scambiati
 Questa pagina permette di visualizzare i libri più scambiati nella piattaforma, è accessibile sia come utenti registrati che non.
 === Come funziona
 Pagina che fornisce ulteriori dettagli riguardo ad obbiettivi, vantaggi e una breve spiegazione del funzionamento della piattaforma. \
 Include anche un collegamento alla pagina di accesso.
 === Libro
-Questa pagina permette di visualizzare i dettagli di uno specifico libro, inoltre permette di visualizzare e di proporre uno scambio con gli utenti che possiedono una copia del libro.
+Questa pagina permette di visualizzare i dettagli di uno specifico libro, inoltre, se l'utente ha eseguito l'accesso, permette di visualizzare e di proporre uno scambio con gli utenti che possiedono una copia del libro.
 === Accedi
-Questa pagina permette agli utenti di accedere alla piattaforma tramite username o email e password.
+Questa pagina permette agli utenti di accedere alla piattaforma tramite username o email e password; per poter accedere l'utente deve prima aver completato la registrazione.
 === Registrati
 Questa pagina permette agli utenti di registrarsi alla piattaforma, inserendo i dati richiesti ovvero: nome, cognome, provincia e comune dove ci si trova, username, email, password e conferma della password.
 === Profilo
@@ -200,26 +204,22 @@ Altrimenti la pagina permette di:
 // TODO: confermare
 - accedere alla pagina di modifica del profilo;
 - accedere alla pagina di modifica dei generi;
-- accedere alla pagina _i tuoi scambi_;
+- accedere alla pagina "_i tuoi scambi_";
+- accedere alla pagina "_recensioni ricevute_";
 - accedere alla pagina di modifica delle liste;
 - uscire dall'account;
-// TODO: confermare
 - eliminare l'account;
 A fine pagina è presente anche una call to action che invita ad esplorare le possibilita di scambio.
 ==== Modifica generi
 Questa pagina permette di visualizzare e scegliere i propri generi preferiti.
 ==== Modifica liste
-// TODO: confermare modifica disponibilità
-Le pagine di modifica delle liste permettono di visualizzare tutti i libri di quella lista, modificare la disponibilità di quelli presenti, di aggiungerli o eliminarli dalla lista.
+Le pagine di modifica delle liste permettono di visualizzare tutti i libri di quella lista, mostrando anche disponibiltà e condizion. Inoltre permette di aggiungere o eliminare libri dalla lista.
 ==== I tuoi scambi
-Questa pagina permette di visualizzare tutti gli scambi in cui l'utente è coinvolto, sia come proponente che come ricevente.
+Questa pagina permette di visualizzare tutti gli scambi in cui l'utente è coinvolto, sia come proponente che come ricevente; è possibile anche aggiungere le recensioni relative agli scambi accettati.
 
 Se l'utente è il proponente può annullare gli scambi in corso, se l'utente è il ricevente può accettare o rifiutare gli scambi in corso.
 === 404
 Questa pagina viene visualizzata quando l'utente tenta di accedere ad una pagina che non esiste, contiene un messaggio di errore e un collegamento alla pagina iniziale.
-=== 500
-Questa pagina viene visualizzata quando si verifica un errore interno al server, contiene un messaggio di errore e un collegamento alla pagina iniziale.
-
 
 = Implementazione
 == Organizzazione del lavoro
@@ -342,7 +342,7 @@ La velocità di caricamento è un fattore fondamentale per migliorare la SERP, p
 Non abbiamo minimizzato i file CSS e JavaScript perché la consegna richiede esplicitamente di non farlo.
 
 == Indicizzazione e alberatura
-Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file contenenti dati sensibili, configurazioni, e script che vengono usati solo come utility.
+Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file contenenti dati sensibili, configurazioni, script che vengono usati solo come utility e pagine dedicate ad un utilizzo più approfondito della piattaforma che non si volgiono rendere direttamente accessibili tramite indicizzazione.
 
 Per quanto riguarda l'alberatura del sito è stata tenuta il più possibile piatta mantenendo un livello di prondità massimo di 3 livelli.
 

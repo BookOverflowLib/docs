@@ -22,7 +22,6 @@
 #set align(left)
 #set heading(numbering: "1.")
 #show heading.where(level: 1): it => {
-  pagebreak(weak: true)
   align(center, it)
 }
 #set text(lang: "it")
@@ -30,6 +29,8 @@
   #it
   #v(0.5em)
 ]
+
+= Introduzione 
 
 = Analisi
 == Descrizione del prodotto
@@ -41,11 +42,13 @@ La piattaforma permette anche di esplorare liberamente i libri inseriti nella pi
 
 == Target di utenza
 La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri, per fare questo permette agli utenti di navigare ed eseguire delle ricerche nei seguenti casi:
-- l'*utente sa di preciso cosa cerca*, quindi può
+// metafore e azioni corrispondenti
+// Tiro perfetto -> barra di ricerca 
+- l'*utente sa di preciso cosa cerca* _(Tiro Perfetto)_, quindi può:
   - popolare la sua lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina "_match per te_" per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
   - eseguire una ricerca mirata tramite il form di ricerca della pagina "_esplora tutti_".
-- l'*utente sa vagamente cosa cerca*, quindi ha due possibilità:
-  - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
+- l'*utente sa vagamente cosa cerca*, quindi ha tre possibilità:
+  - aggiungere i libri in suo possesso alla lista _libri offerti_ e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
   - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_esplora tutti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
   - accede alla pagina "_esplora tutti_" e filtrare i risultati tramite una ricerca.
 - l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando tramite una ricerca.

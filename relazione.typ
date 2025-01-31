@@ -99,7 +99,15 @@ Abbiamo individuato le seguenti tipologie di utenti:
 
 == Base di dati
 Lo schema ER della base di dati è il seguente:
-// TODO: schema fatto bene con comune collegato?
+// TODO: schema fatto bene 
+#figure(
+  image("assets/imgs/BookOverflow.drawio.svg", width: 100%),
+  caption: [
+    A step in the molecular testing
+    pipeline of our lab.
+  ],
+)
+con comune collegato?
 
 La base di dati è stata immplementata utilizzando MariaDB, ed è composta dalle seguenti tabelle:
 - *Utente*
@@ -201,7 +209,6 @@ Altrimenti la pagina permette di:
 - visualizzare nome, cognome, posizione geografica, media delle valuazioni e immagine del profilo;
 - visualizzare i generi preferiti;
 - visualizzare i libri offerti e desiderati dall'utente;
-// TODO: confermare
 - accedere alla pagina di modifica del profilo;
 - accedere alla pagina di modifica dei generi;
 - accedere alla pagina "_i tuoi scambi_";

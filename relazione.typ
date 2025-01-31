@@ -35,20 +35,20 @@
 == Descrizione del prodotto
 Il prodotto consiste in una piattaforma web che permette ad ogni utente registrato di accedere ad un numero maggiore di libri, senza dover spendere ulteriore denaro e senza che la loro raccolta di libri occupi sempre più spazio.
 
-Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di loro interesse e che desiderano libri in possesso dei primi. Inoltre, per fornire un'alternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
+Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. Inoltre, per fornire un'alternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
 
-La piattaforma permette anche di esplorare liberamente i libri disponibili nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
+La piattaforma permette anche di esplorare liberamente i libri inseriti nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
 
 == Target di utenza
-La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri; inoltre la piattaforma permette di navigare ed eseguire delle ricerche agli utenti nei seguenti casi:
+La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri, per fare questo permette agli utenti di navigare ed eseguire delle ricerche nei seguenti casi:
 - l'*utente sa di preciso cosa cerca*, quindi può
   - popolare la sua lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina "_match per te_" per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
-  - eseguire una ricerca mirata tramite il form di ricerca della pagina "_libri offerti_".
+  - eseguire una ricerca mirata tramite il form di ricerca della pagina "_esplora tutti_".
 - l'*utente sa vagamente cosa cerca*, quindi ha due possibilità:
   - aggiungere i libri in suo possesso alla lista libri offerti e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
-  - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_libri offerti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
-  - accede alla pagina "_libri offerti_" e filtrare la ricerca usando i parametri che preferisce.
-- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_libri offerti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
+  - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_esplora tutti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
+  - accede alla pagina "_esplora tutti_" e filtrare la ricerca usando i parametri che preferisce.
+- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando la ricerca usando i parametri che preferisce.
 - l'*utente ha già individuato* i libri di suo interesse, quindi può salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_.
 
 Si prevede un utilizzo tramite dispositivi con performance e dimensioni del display varie, quindi la piattaforma è stata progettata per essere responsive e performante sulla maggior parte dei dispositivi non considerati obsoleti.
@@ -167,7 +167,7 @@ Il footer è composto da dei link ad altre pagine del sito, logo e nome del sito
 === Home
 È la *landing page* del sito, contiene una breve descrizione del servizio offerto, una lista che mostra alcuni dei libri più scambiati ed un collegamento ulteriore alla pagina di accesso.
 === Esplora
-Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _libri offerti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
+Questa pagina mostra le diverse opzioni di ricerca e visualizzazione dei libri presenti nella piattaforma; in particolare permette di accedere alla pagina _esplora tutti_ a utenti registrati e non, e alle pagine _match per te_ e _potrebbe piacerti anche_ solo agli utenti registrarti.
 ==== Match per te
 Questa pagina permette di visualizzare i libri che corrispondono ai desideri dell'utente e che sono offerti da altri utenti a cui interessano i libri offerti dall'utente che esegue la ricerca.
 ==== Potrebbe piacerti anche

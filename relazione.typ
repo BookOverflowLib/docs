@@ -22,7 +22,6 @@
 #set align(left)
 #set heading(numbering: "1.")
 #show heading.where(level: 1): it => {
-  pagebreak(weak: true)
   align(center, it)
 }
 #set text(lang: "it")
@@ -30,6 +29,8 @@
   #it
   #v(0.5em)
 ]
+
+= Introduzione 
 
 = Analisi
 == Descrizione del prodotto

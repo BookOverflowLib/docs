@@ -288,6 +288,13 @@ La maggior parte degli errori mostrati all'utente sono quindi generici e generat
 Nel caso di errori specifici per condizioni che richiedono controlli lato database, come ad esempio la scelta di un username già in uso durante la creazione di un account, abbiamo creato una classe `CustomException` come estensione della classe `Exception`.\
 Questo approccio ci consente di distinguere le eccezioni con messaggi personalizzati e di stamparne il messaggio all'utente.
 === Costruzione delle pagine
+Il rendering delle pagine avviene interamente in modo dinamico tramite PHP a partire da template HTML.\
+I file template (posizionati in `src/templates/`) contengono ancore strutturali sotto forma di commenti HTML dedicati (ad esempio: `<!-- [navbar] -->`) i quali vengono sostituiti con il contenuto dinamico generato dal backend.\
+Questo metodo ha vari vantaggi:
+- Separazione netta tra struttura e contenuto
+- Possibilità di riutilizzare componenti comuni come header e footer
+- Gestione corretta degli url tramite la sostituzione automatica di placeholder come <!-- prefix --> con il percorso relativo corretto.  il funzionamento di asset statici (CSS, immagini) e link interni anche in percorsi nidificati.
+La logica risolve problematiche di routing estremo: in caso di richieste a percorsi non validi con multiple sottodirectory (es. /livello1/livello2/pagina-inesistente), il sistema mantiene la corretta risoluzione dei percorsi nella pagina 404 personalizzata, evitando la rottura dei riferimenti ad asset statici tipica che avverrebbe con un link relativo statico.
 === Validazione
 
 

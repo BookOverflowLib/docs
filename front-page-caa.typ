@@ -54,5 +54,3 @@
   v(2em, weak: true)
   strong(it)
 }
-#outline(title: [Indice], indent: auto)
-#pagebreak()

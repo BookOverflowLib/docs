@@ -59,13 +59,13 @@ Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'ut
 
 L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.
 
-Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
+Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto HTML.
 == Ricerca libri
 La ricerca dei libri da aggiungere alle liste, utilizza le Google Books API; per fornire all'utente una *ricerca automatica* e immediata abbiamo deciso di implementare un meccanismo di _auto-fetching_ basato su un *timer* che viene fatto partire nel momento in cui l'utente smette di digitare per più di 600 millisecondi.
 
 In questo modo evitiamo un numero eccessivo di richieste alle API e soprattutto il contenuto non viene aggiornato troppo velocemente causando un *sovraccarico cognitivo* dell'utente.
 
-Per migliorare l'usabilità e l'accessibilità di questa ricerca automatica per gli utenti che utilizzano screen reader è stato aggiunto un _alert_ che viene che notifica all'utente la ricezione dei risultati della sua ricerca.
+Per migliorare l'usabilità e l'accessibilità di questa ricerca automatica per gli utenti che utilizzano screen reader è stato aggiunto un _alert_ che notifica all'utente la ricezione dei risultati della sua ricerca.
 
 
 = Accessibilità e usabilità
@@ -87,9 +87,9 @@ Non è stata realizzata una site map in quanto il sito presenta una gerachia amp
 
 La palette colori è stata costruita per garantire un *contrasto* sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi. 
 
-Per rendere i *link riconoscibili* vengono tutti sottolineati all'evento _hover_
+Per rendere i *link riconoscibili* vengono tutti sottolineati all'evento _hover_.
 
-Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati.\
+Per *facilitare* ulteriormente l'*orientamento* all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati.\
 Inoltre, si è deciso di sottolineare tutti i link non visitati per garantire un sufficiente contrasto tra link visitato e non visitato quando viene utilizzato il tema chiaro. 
 
 Per costruire una prima palette di base abbiamo usato #link("https://coolors.co/"), successivamente è stata adattata per essere accessibile e in modo che i colori rispecchino il messaggio trasmesso dall'elemento a cui sono applicati. \
@@ -97,7 +97,7 @@ Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #lin
 == Font
 Abbiamo scelto i font nel il catalogo di #link("https://fonts.google.com/")[Google Font], in particolare è stato scelto *Onest* come font _sans-serif_, e *Gentium Book Plus* come font _serif_ per la pagina e per il logo.
 
-Per garantire un’esperienza visiva armoniosa e accessibile, le dimensioni dei font sono state definite utilizzando GRTCalculator, uno strumento che applica il principio della sezione aurea (≈ 1:1.618). Questa scelta progettuale si basa su tre pilastri:
+Per garantire un’esperienza visiva armoniosa e accessibile, le dimensioni dei font sono state definite utilizzando *GRTCalculator*, uno strumento che applica il principio della sezione aurea (≈ 1:1.618). Questa scelta progettuale si basa su tre pilastri:
 - *Armonia estetica*: è una proporzione matematicamente bilanciata, storicamente associata a forme piacevoli alla percezione umana. Crea una gerarchia tipografica coerente, dove titoli, sottotitoli e corpo del testo si relazionano in modo naturale, migliorando l’estetica generale del sito.
 
 - *Leggibilità e accessibilità*: garantisce che le proporzioni mantengano un contrasto adeguato tra testo e sfondo, rispettando i criteri WCAG.
@@ -125,7 +125,7 @@ In questo modo abbiamo ottenuto una valutazione per le seguenti cateogrie:
 - *SEO*: in ogni pagina otteniamo un punteggio maggiore o uguale a 100 sia nella modalità desktop che in quella mobile;
 Di seguito una foto raffigurante i punteggi ottenuti durante i test eseguiti in locale, dove l'unica differenza rispetto al server fornito dall'Università è che viene _bypassato_ il controllo per l'utilizzo di HTTPS:
 #figure(
-  image("assets/imgs/homeLighthouse-cropped.png", width: 100%),
+  image("assets/imgs/homeLighthouse-cropped.png", width: 90%),
   caption: [
     Risultati Google Lighthouse della pagina "_Home_"
   ],
@@ -135,8 +135,12 @@ Per garantire un’esperienza inclusiva e conforme agli standard internazionali,
 
 I controlli sono stati eseguiti seguendo le linee guida *WCAG 2.2* al livello più elevato (*AAA*), e il programma non ha rilevato errori in nessuna delle pagine.
 
-I risultati sono stati integrati con verifiche manuali tramite screen reader *NVDA* e *VoiceOver*.
+== Screen reader
+Per verificare la corretta compatibilità con gli screen reader sono stati utilizzati *NVDA* e *VoiceOver*.
+
+== Altri strumenti
+Per eseguire dei controlli di accessibilità e usabilità più generici abbiamo utilizzato le estensioni del browser *Silktide*, *Wave Evaluation Tool* e *Stark Accessibility Checker*.
 
 = Note sull'utilizzo
-Viene fornito un'ulteriore account con username e password uguali ad _utente_, in aggiunta agli account _user_ e _admin_.\
+Viene fornito un'ulteriore account con username e password uguali ad _utente_, in aggiunta agli account _user_ e _admin_.
 Questo consente di provare tutte le funzionalità del sito web, come ad esempio iniziare uno scambio tra due utenti.

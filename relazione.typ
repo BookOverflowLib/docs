@@ -419,7 +419,7 @@ Per salvaguardare la compatibilità è stato usata la regola :
 nel caso in cui il browser non supporti la funzione clamp, la dimensione del font viene impostata in modo statico.
 
 == Compatibilità
-Per verificare la compatibilità il sito è stato testato sui seguenti dispositivi è browser:
+Per verificare la compatibilità il sito è stato testato sui seguenti dispositivi e browser:
 - Android 14
   - Chrome 132.0
   - Firefox 127.0

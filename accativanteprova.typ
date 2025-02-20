@@ -80,35 +80,6 @@ L'implementazione è stata svolta in HTML per questioni di accessibilità, in pa
 Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
 
 
-== Backend
-
-=== Routing
-Tramite il file .htaccess, abbiamo impostato delle regole per indirizzare tutte le richieste al file index.php, creando un router centrale che gestisce dinamicamente il routing dell'applicazione. Questo approccio ci permette di:
-- Nascondere le estensioni dei file (es. .php) garantendo URL puliti e user-friendly
-- Gestire tutte le richieste GET attraverso un unico entry-point.
-- Implementare errori 404 personalizzati che vengono visualizzati quando si tenta di accedere a pagine non definite nel sistema
-- Bloccare l'accesso diretto ai file di configurazione e script PHP, aumentando la sicurezza
-=== Connessione al database
-Utilizziamo la classe `Database` presente in `src/dbAPI.php` per gestire tutte le query al database ed astrarre le operazioni di connessione e disconnessione.\
-La connessione al database viene effettuata durante la costruzione di un'istanza della classe _Database_ e persiste fino alla sua distruzione. \
-
-Il meccanismo di query viene astratto tramite i metodi `query_to_array` e `void_query`, i quali chiamano internamente il metodo `prepare_sql_statement`.\
-In questa maniera abbiamo potuto forzare l'uso di *prepared statements* per prevenire attacchi di tipo SQL injection.
-
-Abbiamo deciso di gestire evenutali errori durante l'esecuzione delle query stampando l'eccezione lanciata da _mysqli_ nei log del server, in modo da evitare di mostrare informazioni sensibili all'utente ed al contempo avere messaggi di errore di facile comprensione. \
-La maggior parte degli errori mostrati all'utente sono quindi generici e generati altrove, generalmente nel file php che fa uso della classe.\
-Nel caso di errori specifici per condizioni che richiedono controlli lato database, come ad esempio la scelta di un username già in uso durante la creazione di un account, abbiamo creato una classe `CustomException` come estensione della classe `Exception`.\
-Questo approccio ci consente di distinguere le eccezioni con messaggi personalizzati e di stamparne il messaggio all'utente.
-=== Costruzione delle pagine
-Il rendering delle pagine avviene interamente in modo dinamico tramite PHP a partire da template HTML.\
-I file template (posizionati in `src/templates/`) contengono ancore strutturali sotto forma di commenti HTML dedicati (ad esempio: `<!-- [navbar] -->`) i quali vengono sostituiti con il contenuto dinamico generato dal backend.\
-Questo metodo ha vari vantaggi:
-- Separazione netta tra struttura e contenuto
-- Possibilità di riutilizzare componenti comuni come header e footer
-- Gestione corretta degli url tramite la sostituzione automatica di placeholder come <!-- prefix --> con il percorso relativo corretto. il funzionamento di asset statici (CSS, immagini) e link interni anche in percorsi nidificati.
-La logica risolve problematiche di routing estremo: in caso di richieste a percorsi non validi con multiple sottodirectory (es. /livello1/livello2/pagina-inesistente), il sistema mantiene la corretta risoluzione dei percorsi nella pagina 404 personalizzata, evitando la rottura dei riferimenti ad asset statici tipica che avverrebbe con un link relativo statico.
-
-
 = Accessibilità e usabilità
 Si è tenuto conto dell'accessibilità e dell'usabilità del sito durante tutta la progettazione e l'implementazione, per garantire un'esperienza di navigazione ottimale a tutti gli utenti, indipendentemente dalle loro capacità.
 Nei tre fogli CSS, dedicati alla versione desktop, mobile e stampa, sono state utilizzate misure relative per assicurare che il contenuto rimanga leggibile e accessibile su dispositivi con dimensioni diverse. \

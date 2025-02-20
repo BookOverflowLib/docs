@@ -1,4 +1,4 @@
-#include "front-page.typ"
+#include "front-page-caa.typ"
 
 #set page(
   margin: (top: 4cm, bottom: 4cm, left: 2cm, right: 2cm),
@@ -18,6 +18,7 @@
 )
 #counter(page).update(1)
 #set page(numbering: "1")
+#show link: underline
 #set par(justify: true, linebreaks: "optimized", first-line-indent: 0.5em)
 #set align(left)
 #set heading(numbering: "1.")
@@ -30,20 +31,17 @@
   #v(0.5em)
 ]
 
-= Introduzione
-== Descrizione del prodotto
-Il prodotto consiste in una piattaforma web che permette ad ogni utente registrato di accedere ad un numero maggiore di libri, senza dover spendere ulteriore denaro e senza che la loro raccolta di libri occupi sempre più spazio.
+= Introduzione 
+== Perchè BookOverflow
+BookOverflow è il posto dove i libri non finiscono mai. Come _StackOverflow_ per i programmatori, qui gli amanti della lettura trovano un "overflow" di storie, connessioni e possibilità, tutto senza spendere un euro.
 
-Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. Inoltre, per fornire un'alternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
-
-La piattaforma permette anche di esplorare liberamente i libri inseriti nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
-
+La bellezza di BookOverflow risiede nel suo potere di trasformare libri dimenticati sugli scaffali in opportunità, inoltre si impegna a ridurre l'impatto ambientale dell'industria editoriale, incentivando pratiche sostenibili.
 
 = Progettazione
 == Layout
 In fase di progettazione si è deciso di adottare un *layout responsive* che permette di variare le caratteristiche layout basandosi su degli intervalli di dimensione della finestra di visualizzazione; questo garantisce un'esperienza di navigazione ottimale su dispositivi con dimensioni e risoluzioni diverse.
 
-Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è stato progettato per essere fruibile su dispositivi mobili, tablet e desktop; così facendo abbiamo comunque reso il sito accessibile da dispositivi mobile senza sacrificare il layout desktop.
+Il sito è stato testato per essere fruibile su dispositivi mobili, tablet e desktop.
 
 == Tipologie di utente
 Abbiamo individuato le seguenti tipologie di utenti:
@@ -58,7 +56,7 @@ Abbiamo individuato le seguenti tipologie di utenti:
   - Può inserire delle recensioni sugli utenti in relazione ad uno scambio.
 - *Amministratore*:
   - Può visualizzare gli utenti registrati nella piattaforma;
-  - Per ogni utente può viusualizzare gli scambi;
+  - Può visualizzare gli scambi di ogni utente;
   - Può eliminare gli utenti dalla piattaforma;
   - Può accedere alla pagina "_esplora_" per verificare i libri prensenti nella piattaforma.
 
@@ -72,44 +70,78 @@ Inoltre si trova risposta anche alle seguenti domande:
 - *Dove posso trovare informazioni più approfondite?* Informazione ottenibile tramite la pagina _come funziona_, pagina sempre raggiungibile tramite _navbar_.
 
 == Frontend
-=== Validazione
+=== Validazione lato client
 La validazione lato client viene effettuata tramite HTML, in particolare vengono eseguiti controlli tramite *espressioni regolari* per verificare che i dati inseriti dall'utente rispettino il formato richiesto; viene anche verificato che i campi obbligatori siano stati compilati.
 Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'utente in modo che possa correggere eventuali errori prima di inviare i dati al server.
 
-L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.\
-Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
+L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.
 
+Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
 
 = Accessibilità e usabilità
 Si è tenuto conto dell'accessibilità e dell'usabilità del sito durante tutta la progettazione e l'implementazione, per garantire un'esperienza di navigazione ottimale a tutti gli utenti, indipendentemente dalle loro capacità.
-Nei tre fogli CSS, dedicati alla versione desktop, mobile e stampa, sono state utilizzate misure relative per assicurare che il contenuto rimanga leggibile e accessibile su dispositivi con dimensioni diverse. \
-È stato scelto un linguaggio semplice e chiaro per faciliare la comprensione anche da parte di utenti con disabilità cognitive.\
-Per l'orientamento dell'utente all'interno del sito è stata inserita una _breadcrumb_ in tutte le pagine, che permette di capire in che punto della gerarchia del sito ci si trova e di tornare alle pagine di livello superiore.
-Per gli utenti che navigano tramite screen reader o altri dipositivi di supporto sono presenti aiuti alla navigazione che permettono di saltare direttamente ai contenuti principali della pagina, evitando di dover ascoltare tutto il contenuto come _salta al contenuto_, che permette di saltare direttamente al contenuto principale della pagina. Inoltre, per facilitare l'utente a ritornare all'inizio della pagina è stato inserito un bottone, _scroll to top_ che permette di tornare all'inizio della pagina evitando di dover scorrere nuovamente tutto il contenuto, questo è particolarmente utile per utenti con disabilità motorie e per utenti che navigano tramite dispositivi mobile.\
+
+Nei tre fogli CSS, dedicati alla versione desktop, mobile e stampa, sono state utilizzate misure relative per assicurare che il contenuto rimanga leggibile e accessibile su dispositivi con dimensioni diverse.
+
+È stato scelto un linguaggio semplice e chiaro per faciliare la comprensione anche da parte di utenti con disabilità cognitive.
+
+Per l'orientamento dell'utente all'interno del sito è stata inserita una _breadcrumb_ in tutte le pagine, che permette di capire in che punto della gerarchia del sito ci si trova e di tornare alle pagine di livello superiore. 
+
+Per gli utenti che navigano tramite screen reader o altri dipositivi di supporto sono presenti aiuti alla navigazione che permettono di saltare direttamente ai contenuti principali della pagina, evitando di dover ascoltare tutto il contenuto come _salta al contenuto_, che permette di saltare direttamente al contenuto principale della pagina. 
+
+Inoltre, per facilitare l'utente a ritornare all'inizio della pagina è stato inserito un bottone, _scroll to top_ che permette di tornare all'inizio della pagina evitando di dover scorrere nuovamente tutto il contenuto, questo è particolarmente utile per utenti con disabilità motorie e per utenti che navigano tramite dispositivi mobile.
+
 Sempre tenendo conto degli utenti che navigano tramite screen reader, sono stati utilizzati gli attributi _lang_ per le parole in lingue straniere per consentirne la pronuncia corretta, inoltre sono stati utilizzati gli attributi _aria-label_ per facilitare la comprensione dei vari elementi della pagina, in particolare per la gestione dei messaggi di errore.
 
-L'accessibilità è stata verificata sia manualmente che tramite strumenti automatici come ad esempio _Lighthouse_ di Google Chrome, VoiceOver, Silktide, Wave Evaluation Tool e Stark.\
+L'accessibilità è stata verificata sia manualmente che tramite strumenti automatici come ad esempio _Lighthouse_ di Google Chrome, VoiceOver, Silktide, Wave Evaluation Tool e Stark 
 Per garantire la compatibilità il sito è stato testato su diversi browser come Google Chrome, Mozilla Firefox, Microsoft Edge e Safari.
 
 Non è stata realizzata una site map in quanto il sito presenta una gerachia ampia e poco profonda che abbiamo ritenuto facilemente navigabile.
 
 == Palette colori
 
-La palette colori è stata costruita per garantire un contrasto sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi.
+La palette colori è stata costruita per garantire un contrasto sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi. 
 
-Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati. Siamo consapevoli che la scelta dei colori può non garantire un sufficiente contrasto tra link visitato e non visitato ma abbiamo deciso di mantere tale scelta dando priorità al contrasto tra testo e sfondo e alla coerenza tra i colori del sito.
+Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati.\ 
+Siamo consapevoli che utilizzando la versione chiara potrebbe non esserci un sufficiente contrasto tra link visitato e non 
+
+Siamo consapevoli che la scelta dei colori potrebbe non garantire un sufficiente contrasto tra link visitato e non visitato quando viene utilizzato il tema chiaro ma abbiamo deciso di mantere tale scelta dando priorità al contrasto tra testo e sfondo e alla coerenza tra i colori del sito.
 
 Per costruire una prima palette di base abbiamo usato #link("https://coolors.co/"), successivamente è stata adattata per essere accessibile e in modo che i colori rispecchino il messaggio trasmesso dall'elemento a cui sono applicati. \
 Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #link("https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/")[WCAG Contrast Checker] che si basa sui requisiti di WCAG 2.2; grazie a questo strumento abbiamo constatato che la nostra palette rispetta il livello WCAG AAA.
 
+= Testing
+== Google Lighthouse
+Per verificare la qualità del progetto dal punto di vista della SEO abbiamo usato il tool *Google Lighthouse*.
+In questo modo abbiamo ottenuto una valutazione per le seguenti cateogrie:
+- *Performance*: in ogni pagina otteniamo un punteggio maggiore o uguale a 90 sia nella modalità desktop che in quella mobile;
+- *Accessibility*: in ogni pagina otteniamo un punteggio maggiore o uguale a 98 sia nella modalità desktop che in quella mobile;
+- *Best Practice*: in ogni pagina otteniamo un punteggio maggiore o uguale a 100 sia nella modalità desktop che in quella mobile;\  
+  Facciamo notare che il punteggio visualizzato è più basso quando il sito viene ospitato nel server del dipartimento a causa dell'utilizzo del protocollo _HTTP_ (e non _HTTPS_) su una porta diversa da `80`
+- *SEO*: in ogni pagina otteniamo un punteggio maggiore o uguale a 100 sia nella modalità desktop che in quella mobile;
+Di seguito delle foto raffiguranti i punteggi ottenuti durante i test eseguiti in locale, dove l'unica differenza è che viene _bypassato_ il controllo per l'utilizzo di HTTPS:
+#figure(
+  image("assets/imgs/homeLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Home_"
+  ],
+)
+#figure(
+  image("assets/imgs/esploraLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Esplora_"
+  ],
+)
+#figure(
+  image("assets/imgs/comefunzionaLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Come funziona_"
+  ],
+)
 
-= SEO
+== Total Validator
+Per garantire un’esperienza inclusiva e conforme agli standard internazionali, tutte le pagine del sito sono state sottoposte a test automatizzati tramite Total Validator. 
 
+I controlli sono stati eseguiti seguendo le linee guida WCAG 2.2 al livello più elevato (AAA), e il programma ha non rilevato errori in nessuna delle pagine.
 
-== Performance
-La velocità di caricamento è un fattore fondamentale per migliorare la SERP, per questo abbiamo deciso di compiere le seguenti azioni per migliorare la performance del sito:
-- ottimizzazione del caricamento delle immagini comprimendole in formato *.AVIF*, questo permette di ridurre il peso delle immagini mantenendo una qualità discreta;
-- utilizzo di font più leggeri in formato *.woff2*;
-- *configurato il caricamento delle risorse* in HTML in modo che vengano caricati prima i font e le immagini necessarie per la visualizzazione della pagina;
-- utilizzo della clausola *_font-display: swap_* per garantire che il testo sia visibile anche se il font non è ancora stato scaricato;
-- utilizzo del tool *Google Lighthouse* per misurare le performance del sito e migliorarle;
+I risultati sono stati integrati con verifiche manuali tramite screen reader NVDA e VoiceOver.

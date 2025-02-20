@@ -15,11 +15,11 @@
 #text()[
   Bazzan Matteo - matteo.bazzan.1\@studenti.unipd.it - 2076422
 
-  Bernardello Alessandro - alessandro.bernardello.1\@studenti.unipd.it - 2077674
+  Bernardello Alessandro - alessandro.bernardello.1\@studenti.unipd.it  - 2077674
 
   Mathew Aleena - aleena.mathew\@studenti.unipd.it - 2068242
 
-  Ribon Luca - luca.ribon\@studenti.unipd.it - 2075516 - *Referente*
+  Ribon Luca - luca.ribon\@studenti.unipd.it -  2075516 - *Referente*
 ]
 
 #v(3em)
@@ -49,10 +49,10 @@
   [Amministratore], [admin], [admin],
 )
 
-// #pagebreak()
-// #show outline.entry.where(level: 1): it => {
-//   v(2em, weak: true)
-//   strong(it)
-// }
-// #outline(title: [Indice], indent: auto)
-// #pagebreak()
+#pagebreak()
+#show outline.entry.where(level: 1): it => {
+  v(2em, weak: true)
+  strong(it)
+}
+#outline(title: [Indice], indent: auto)
+#pagebreak()

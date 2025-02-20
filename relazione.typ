@@ -18,6 +18,7 @@
 )
 #counter(page).update(1)
 #set page(numbering: "1")
+#show link: underline
 #set par(justify: true, linebreaks: "optimized", first-line-indent: 0.5em)
 #set align(left)
 #set heading(numbering: "1.")
@@ -31,48 +32,58 @@
 ]
 
 = Introduzione 
+== Perchè BookOverflow
+BookOverflow è il posto dove i libri non finiscono mai. Come _StackOverflow_ per i programmatori, qui gli amanti della lettura trovano un "overflow" di storie, connessioni e possibilità, tutto senza spendere un euro.
+
+La bellezza di BookOverflow risiede nel suo potere di trasformare libri dimenticati sugli scaffali in opportunità, inoltre si impegna a ridurre l'impatto ambientale dell'industria editoriale, incentivando pratiche sostenibili.
 
 = Analisi
 == Descrizione del prodotto
-Il prodotto consiste in una piattaforma web che permette ad ogni utente registrato di accedere ad un numero maggiore di libri, senza dover spendere ulteriore denaro e senza che la loro raccolta di libri occupi sempre più spazio.
+BookOverflow è una piattaforma web che permette agli utenti registrati di accedere a una vasta selezione di libri in modo gratuito e risolve il problema dell'accumulo di libri negli scaffali.
 
-Per fare fronte al problema descritto il prodotto si pone come obbiettivo quello di aiutare gli utenti a mettersi in contatto con altri utenti che offrono libri di interesse dei primi e che desiderano libri in possesso dei primi. Inoltre, per fornire un'alternativa allo specificare i libri desiderati, è presente la possiblità di definire dei generi di interesse.
+L’obiettivo principale è facilitare gli scambi tra utenti: chi cerca un libro specifico può trovare chi lo possiede e, viceversa, chi offre un libro può connettersi con chi è interessato a riceverlo. Per semplificare la ricerca, gli utenti possono:
 
-La piattaforma permette anche di esplorare liberamente i libri inseriti nella piattaforma, ovvero quelli che sono stati scelti dagli utenti come offerti o desiderati.
+- Indicare libri desiderati o generi preferiti (es. fantascienza, romanzi storici), evitando di selezionare manualmente ogni titolo.
+
+- Esplorare liberamente tutti i libri disponibili sulla piattaforma, sia quelli offerti per lo scambio che quelli cercati da altri utenti.
+
+In questo modo, la piattaforma unisce praticità, risparmio e personalizzazione, rendendo gli scambi di libri accessibili a tutti.
 
 == Target di utenza
 La piattaforma si rivolge a tutti coloro che intendono aggiornare la propria raccolta di libri, per fare questo permette agli utenti di navigare ed eseguire delle ricerche nei seguenti casi:
-// metafore e azioni corrispondenti
-// Tiro perfetto -> barra di ricerca 
-- l'*utente sa di preciso cosa cerca* _(Tiro Perfetto)_, quindi può:
-  - popolare la sua lista dei desideri e aggiungere i libri di cui è in possesso alla lista dei libri offerti, e successivamente consultare la pagina "_match per te_" per visualizzare i libri che corrispondono ai suoi desideri e che sono offerti da utenti a cui interessano i libri che l'utente propone;
+- l'*utente sa di preciso cosa cerca* _(tiro perfetto)_, quindi può:
   - eseguire una ricerca mirata tramite il form di ricerca della pagina "_esplora tutti_".
-- l'*utente sa vagamente cosa cerca*, quindi ha tre possibilità:
-  - aggiungere i libri in suo possesso alla lista _libri offerti_ e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti che sono interessati ai libri proposti dall'utente;
+  - popolare la sua lista dei desideri e successivamente consultare la pagina "_match per te_", per visualizzare i possibili scambi per ottenere i libri che corrispondono ai suoi desideri
+- l'*utente sa vagamente cosa cerca* _(trappola per aragoste)_, quindi ha tre possibilità:
+  - aggiungere i libri in suo possesso alla lista _libri offerti_ e consultare la pagina "_potrebbe piacerti anche_" per visualizzare i libri offerti dagli utenti interessati ai propri libri;
   - aggiungere i suoi generi preferiti nella piattaforma, e successivamente accedere alla pagina "_esplora tutti_" dove è presente una funzione per filtrare i libri visualizzati usando i suoi generi preferiti;
-  - accede alla pagina "_esplora tutti_" e filtrare i risultati tramite una ricerca.
-- l'*utente preferisce esplorare* in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili, eventualmente filtrando tramite una ricerca.
-- l'*utente ha già individuato* i contenuti di suo interesse, quindi può:
+  - accedere alla pagina "_esplora tutti_" e filtrare i risultati tramite una ricerca.
+- l'*utente preferisce esplorare* _(pesca a strascico)_ in modo ampio i libri disponibili nella piattaforma, quindi può accedere alla pagina "_esplora tutti_" e visualizzare tutti i libri disponibili // eventualmente filtrando tramite una ricerca.
+- l'*utente ha già individuato* _(boa di segnalazione)_ i contenuti di suo interesse, quindi può:
   - salvare la pagina del libro tramite _bookmark_ dato che l'ISBN del libro viene passato come parametro _GET_;
   - salvare i risultati di una ricerca tramite _bookmark_ dato che sia l'input di ricerca che l'utilizzo del filtro _generi preferiti_ vengono passati come parametri _GET_.
 
+  
 Si prevede un utilizzo tramite dispositivi con performance e dimensioni del display varie, quindi la piattaforma è stata progettata per essere responsive e performante sulla maggior parte dei dispositivi.
 
 == Funzionalità
 === Registrazione e accesso
 La piattaforma offre agli utenti la possibilità di registrarsi per accedere a sezioni e funzionalità personalizzate.\
-Una volta completata la registrazione, gli utenti potranno effettuare l'accesso utilizzando il proprio username o email, assieme alla propria password.\
-È inoltre prevista la possibilità di disconnettersi dal proprio account o di eliminarlo in modo permanente.\
-=== Personalizzazione dell'esperienza
-La piattaforma consente agli utenti di personalizzare la propria esperienza attraverso la definizione di interessi specifici, tra cui l'inserimento di libri nella lista dei desideri e l'indicazione dei generi letterari preferiti.
+Una volta completata la registrazione, gli utenti potranno effettuare l'accesso utilizzando il proprio username o email, assieme alla propria password.
 
-Gli utenti possono inoltre catalogare i volumi già in loro possesso e quelli che intendono mettere a disposizione per lo scambio, creando così un inventario personale consultabile in qualsiasi momento.\
+È inoltre prevista la possibilità di disconnettersi dal proprio account o di eliminarlo in modo permanente.
+=== Personalizzazione dell'esperienza
+La piattaforma consente agli utenti di personalizzare la propria esperienza attraverso la definizione di interessi specifici, tra cui l'inserimento di libri nella *lista dei desideri* e l'indicazione dei *generi letterari preferiti*.
+Gli utenti possono inoltre inserire i volumi che intendono mettere a disposizione per lo scambio.
+
 === Ricerca e visualizzazione dei libri
-La piattaforma adotta un sistema di suggerimenti personalizzati che, tenendo conto dei generi e titoli preferiti dall'utente, nonché dell'offerta disponibile, propone una selezione di libri in linea con i suoi interessi. \
+La piattaforma adotta un sistema di suggerimenti personalizzati che, tenendo conto dei generi e libri desiderati dall'utente, nonché dell'offerta disponibile, propone una selezione di libri in linea con i suoi interessi.
 
 Per una ricerca più mirata, gli utenti possono consultare l'elenco completo dei libri registrati, filtrando i risultati per titolo, autore, ISBN o generi preferiti. 
+
 === Scambi
-Se un utente è in possesso di un libro desiderato da un altro utente, può inviare una proposta di scambio.\
+Se un utente è in possesso di un libro desiderato da un altro utente, può inviare una proposta di scambio.
+
 L'utente ricevente potrà decidere se accettare o rifiutare la proposta attraverso un apposita interfaccia dedicata.
 === Recensioni
 Dopo l'accettazione di uno scambio, gli utenti possono lasciare una recensione sull'esperienza. Il sistema di feedback permette sia a chi offre che a chi accetta lo scambio di condividere la propria opinione, aiutando così gli altri utenti a scegliere con chi scambiare.
@@ -81,7 +92,7 @@ Dopo l'accettazione di uno scambio, gli utenti possono lasciare una recensione s
 == Layout
 In fase di progettazione si è deciso di adottare un *layout responsive* che permette di variare le caratteristiche layout basandosi su degli intervalli di dimensione della finestra di visualizzazione; questo garantisce un'esperienza di navigazione ottimale su dispositivi con dimensioni e risoluzioni diverse.
 
-Nonostante non sia stata utilizzata la tecnica del *mobile first*, il sito è stato progettato per essere fruibile su dispositivi mobili, tablet e desktop; così facendo abbiamo comunque reso il sito accessibile da dispositivi mobile senza sacrificare il layout desktop.
+Il sito è stato testato per essere fruibile su dispositivi mobili, tablet e desktop.
 
 == Tipologie di utente
 Abbiamo individuato le seguenti tipologie di utenti:
@@ -96,26 +107,42 @@ Abbiamo individuato le seguenti tipologie di utenti:
   - Può inserire delle recensioni sugli utenti in relazione ad uno scambio.
 - *Amministratore*:
   - Può visualizzare gli utenti registrati nella piattaforma;
-  - Per ogni utente può viusualizzare gli scambi;
+  - Può visualizzare gli scambi di ogni utente;
   - Può eliminare gli utenti dalla piattaforma;
   - Può accedere alla pagina "_esplora_" per verificare i libri prensenti nella piattaforma.
 
+== API esterne
+=== Google Books API
+Utilizziamo le API di #link("https://developers.google.com/books")[Google Books] in varie parti del progetto.
+
+Queste, durante il processo di aggiunta di un libro, ci permettono di fornire all'utente una funzionalità di ricerca del libro desiderato in base a vari parametri (titolo, autore, anno di pubblicazione ed ISBN).\
+Le informazioni necessarie al funzionamento del sito (come ad esempio l'immagine di copertina ed i generi) vengono recuperate automaticamente mediante l'API e non è necessario che un utente le compili manualmente.
+
+Abbiamo inoltre deciso di far si che le immagini di copertina dei libri nelle varie pagine vengano recuperate direttamente tramite URL esterni al servizio Google, invece di scaricarle e fornirle direttamente dal nostro sito.\
+Questo per evitare di appropiarci e distribuire materiale senza l'adeguato permesso andando ad infrangere eventuali leggi sul copyright.
+
+L'utilizzo delle API di Google Books con questa modalità è consentito nella relativa documentazione; inoltre questa API è pubblicamente accessibile anche senza registrazione e presenta rate-limit molto elevati (\~100k richieste/giorno).
+=== Picsum API
+Utilizziamo le API di #link("https://picsum.photos/")[Picsum] per assegnare ad ogni utente registrato un'immagine di profilo unica e copyright-free poiché utilizza le immagini di #link("https://unsplash.com/it/licenza")[Unsplash con licenza gratuita]
+
+Per assegnarle usiamo questa chiamata: 
+```url
+https://picsum.photos/seed/{email_utente}/200/300
+```
+il seed utilizzato per generare l'immagine è l'email dell'utente stesso, essendo la chiave primaria della tabella `Utente` nel DB l'immagine risulta univoca per ogni utente.
+
 == Base di dati
 Lo schema ER della base di dati è il seguente:
-// TODO: schema fatto bene 
 #figure(
-  image("assets/imgs/BookOverflow.drawio.svg", width: 100%),
+  image("assets/imgs/BookOverflow.drawio.png", width: 100%),
   caption: [
-    A step in the molecular testing
-    pipeline of our lab.
+    Schema ER della base di dati
   ],
 )
-con comune collegato?
-
 La base di dati è stata immplementata utilizzando MariaDB, ed è composta dalle seguenti tabelle:
 - *Utente*
   - email: chiave primaria
-  - password_hash: hash della password dell'utente che comprende anche il salt
+  - password_hash: hash della password dell'utente, comprensivo di un salt univoco.
   - username: nome utente univoco
   - nome
   - cognome
@@ -154,12 +181,14 @@ La base di dati è stata immplementata utilizzando MariaDB, ed è composta dalle
   - dataPubblicazione: data di pubblicazione della recensione, ha _CURRENT_DATE_ come default per semplificare l'inserimento
   - valutazione: valore intero (usiamo _TINYINT_ per ottimizzare lo spazio occupato) compreso tra 1 e 5
   - contenuto: testo della recensione; colonna di tipo _TEXT_ per permettere la scrittura di recensioni di lunghezza variabile fino a 65,535 caratteri, questo non rappresenta un problema perché la documentazione di MariaDB indica che le stringhe di lunghezza variabile allocano solo lo spazio effettivamente occupato
-
+  
 C'è poi un secondo schema che è stato utilizzato per la gestione delle posizioni geografiche, che è composto dalle seguenti tabelle:
 - regioni
 - province
 - comuni
 Abbiamo deciso di non integrare quest'ultimo nello schema principale perché viene utilizzato solamente per ottenere un elenco di province e comuni da usare nel form di registrazione quindi abbiamo preferito non complicare ulteriormente la struttura dello schema principale.
+
+
 
 == Struttura del sito
 Nel sito tutte le pagine utilizzano lo schema a tre pannelli che risponde alle seguenti domande:
@@ -231,18 +260,21 @@ Se l'utente è il proponente può annullare gli scambi in corso, se l'utente è 
 === 404
 Questa pagina viene visualizzata quando l'utente tenta di accedere ad una pagina che non esiste, contiene un messaggio di errore e un collegamento alla pagina iniziale.
 
+== BISAC
+La gestione dei generi del libri è basata sullo standard #link("https://www.bisg.org/complete-bisac-subject-headings-list")[BISAC], ovvero lo standard internazionale utilizzato per catalogare i libri. 
+
 = Implementazione
 == Organizzazione del lavoro
 Per la realizzazione del progetto è stato utilizzato un *repository su GitHub*, in cui sono presenti la *branch* main e diverse feature branch. Per la gestione dell'infrastruttura utilizzata per testare il progetto in locale è stato utilizzato un file *Docker Compose* assieme ad un *Dockerfile*, il secondo è stato usato per configurare alcuni parametri non gestibili tramite il Docker Compose.
 
-Il lavoro è stato suddiviso nel seguente modo:
-- Aleena Mathew:
+Il lavoro è stato svolto in modo misto sia sincrono che asincrono, ed è stato suddiviso nel seguente modo:
+- *Aleena Mathew*:
   - Progettazione dell'interfaccia grafica;
   - Realizzazione dell'interfaccia grafica tramite HTML e CSS;
   - Realizzazione dei layout di stampa;
   - Ideazione dei contenuti testuali e delle immagini;
   - Stesura della relazione;
-- Alessandro Bernardello:
+- *Alessandro Bernardello*:
   - Progettazione del database;
   - Implementazione del database;
   - Implementazione delle API del database;
@@ -250,14 +282,14 @@ Il lavoro è stato suddiviso nel seguente modo:
   - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Ottimizzazione delle immagini;
   - Stesura della relazione;
-- Luca Ribon:
+- *Luca Ribon*:
   - Progettazione dell'interfaccia grafica;
   - Progettazione del database;
   - Implementazione del database;
   - Implementazione delle API del database;
   - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Stesura della relazione;
-- Matteo Bazzan:
+- *Matteo Bazzan*:
   - Progettazione dell'interfaccia grafica;
   - Realizzazione dell'interfaccia grafica tramite HTML e CSS;
   - Implementazione delle API del database;
@@ -265,23 +297,33 @@ Il lavoro è stato suddiviso nel seguente modo:
   - Implementazione del backend delle pagine riguardante l'interazione con il database e relativi controlli;
   - Implementazione degli script JavaScript per la gestione dei componenti grafici;
   - Stesura della relazione;
+
 Tutti i membri del gruppo hanno contribuito all'implementazione e/o alla verifica dell'accessibilità del sito.
 
+
+
 == Frontend
-=== Validazione
+=== Validazione lato client
 La validazione lato client viene effettuata tramite HTML, in particolare vengono eseguiti controlli tramite *espressioni regolari* per verificare che i dati inseriti dall'utente rispettino il formato richiesto; viene anche verificato che i campi obbligatori siano stati compilati.
 Lo scopo di questa validazione è quello di dare un *feedback* anticipato all'utente in modo che possa correggere eventuali errori prima di inviare i dati al server.
 
-L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.\
+L'implementazione è stata svolta in HTML per questioni di accessibilità, in particolare per favorire una gestione migliore della navigazione tramite screen reader; oltretutto è stata ridotta la dipendenza da JavaScript.
+
 Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza dato che i controlli vengono comunque eseguiti lato server, inoltre JavaScript è manipolabile lato client tanto quanto l'HTML.
 === Stampa
-Per ogni pagina viene incluso un layout di stampa, che riorganizza le informazioni principali dalla pagina sistemandole in un formato adeguato, principamente rimuovendo i colori di background non necessari per la stampa. 
+Per ogni pagina viene incluso un layout di stampa, che riorganizza le informazioni principali dalla pagina sistemandole in un formato adeguato, principamente rimuovendo i colori di background non necessari per la stampa.
 
+=== Ricerca libri
+La ricerca dei libri da aggiungere alle liste, utilizza le Google Books API; per fornire all'utente una *ricerca automatica* e immediata abbiamo deciso di implementare un meccanismo di _auto-fetching_ basato su un *timer* che viene fatto partire nel momento in cui l'utente smette di digitare per più di 600 millisecondi.
+
+In questo modo evitiamo un numero eccessivo di richieste alle API e soprattutto il contenuto non viene aggiornato troppo velocemente causando un *sovraccarico cognitivo* dell'utente.
+
+Per migliorare l'usabilità e l'accessibilità di questa ricerca automatica per gli utenti che utilizzano screen reader è stato aggiunto un _alert_ che viene che notifica all'utente la ricezione dei risultati della sua ricerca.
 
 == Backend
 
 === Routing
-Tramite il file .htaccess, abbiamo impostato delle regole per indirizzare tutte le richieste al file index.php, creando un router centrale che gestisce dinamicamente il routing dell'applicazione. Questo approccio ci permette di:
+Tramite il file `.htaccess`, abbiamo impostato delle regole per indirizzare tutte le richieste al file index.php, creando un router centrale che gestisce dinamicamente il routing dell'applicazione. Questo approccio ci permette di:
 - Nascondere le estensioni dei file (es. .php) garantendo URL puliti e user-friendly
 - Gestire tutte le richieste GET attraverso un unico entry-point.
 - Implementare errori 404 personalizzati che vengono visualizzati quando si tenta di accedere a pagine non definite nel sistema
@@ -303,17 +345,42 @@ I file template (posizionati in `src/templates/`) contengono ancore strutturali 
 Questo metodo ha vari vantaggi:
 - Separazione netta tra struttura e contenuto
 - Possibilità di riutilizzare componenti comuni come header e footer
-- Gestione corretta degli url tramite la sostituzione automatica di placeholder come <!-- prefix --> con il percorso relativo corretto.  il funzionamento di asset statici (CSS, immagini) e link interni anche in percorsi nidificati.
-La logica risolve problematiche di routing estremo: in caso di richieste a percorsi non validi con multiple sottodirectory (es. /livello1/livello2/pagina-inesistente), il sistema mantiene la corretta risoluzione dei percorsi nella pagina 404 personalizzata, evitando la rottura dei riferimenti ad asset statici tipica che avverrebbe con un link relativo statico.
-=== Validazione
+- Gestione corretta degli url tramite la sostituzione automatica di placeholder come `<!-- prefix -->` con il percorso relativo corretto.  il funzionamento di asset statici (CSS, immagini) e link interni anche in percorsi nidificati.
+La logica risolve problematiche di routing estremo: in caso di richieste a percorsi non validi con multiple sottodirectory (es. `/livello1/livello2/pagina-inesistente`), il sistema mantiene la corretta risoluzione dei percorsi nella pagina 404 personalizzata, evitando la rottura dei riferimenti ad asset statici tipica che avverrebbe con un link relativo statico.
+=== Validazione lato server
+La piattaforma implementa un sistema di validazione multi-livello per garantire l’integrità e la sicurezza dei dati inseriti dagli utenti durante la registrazione.
+
+- Validazione lato server (PHP):
+  - Controlli strutturali:
+    - Verifica che la richiesta sia di tipo POST e che tutti i campi siano presenti.
+    - Confronto tra password e conferma password per evitare errori di digitazione.
+  - Sanitizzazione:
+    - Uso di htmlspecialchars() su nome e cognome per prevenire attacchi XSS.
+    - Regex per controllare il formato dei dati
+
+- Gestione degli errori:
+  - Reindirizzamento alla pagina precedente con messaggi specifici di errore (es. "Credenziali non valide").
+  - Utilizzo di prepared statements e classe DBAccess per prevenire SQL injection.
+
+- Sicurezza aggiuntiva:
+  - Hash della password con algoritmo moderno (_Bcrypt_) con aggiunta di salt randomizzato per prevenzione di attacchi mediante _Rainbow Tables_ precalcolate
+
+Questo approccio garantisce usabilità (feedback immediato all’utente sugli errori) e robustezza (protezione da input malevoli), allineandosi alle best practice per applicazioni web sicure odierne.
 
 
 = Accessibilità e usabilità
 Si è tenuto conto dell'accessibilità e dell'usabilità del sito durante tutta la progettazione e l'implementazione, per garantire un'esperienza di navigazione ottimale a tutti gli utenti, indipendentemente dalle loro capacità.
+
 Nei tre fogli CSS, dedicati alla versione desktop, mobile e stampa, sono state utilizzate misure relative per assicurare che il contenuto rimanga leggibile e accessibile su dispositivi con dimensioni diverse.
+
 È stato scelto un linguaggio semplice e chiaro per faciliare la comprensione anche da parte di utenti con disabilità cognitive.
+
 Per l'orientamento dell'utente all'interno del sito è stata inserita una _breadcrumb_ in tutte le pagine, che permette di capire in che punto della gerarchia del sito ci si trova e di tornare alle pagine di livello superiore. 
-Per gli utenti che navigano tramite screen reader o altri dipositivi di supporto sono presenti aiuti alla navigazione che permettono di saltare direttamente ai contenuti principali della pagina, evitando di dover ascoltare tutto il contenuto come _salta al contenuto_, che permette di saltare direttamente al contenuto principale della pagina. Inoltre, per facilitare l'utente a ritornare all'inizio della pagina è stato inserito un bottone, _scroll to top_ che permette di tornare all'inizio della pagina evitando di dover scorrere nuovamente tutto il contenuto, questo è particolarmente utile per utenti con disabilità motorie e per utenti che navigano tramite dispositivi mobile.
+
+Per gli utenti che navigano tramite screen reader o altri dipositivi di supporto sono presenti aiuti alla navigazione che permettono di saltare direttamente ai contenuti principali della pagina, evitando di dover ascoltare tutto il contenuto come _salta al contenuto_, che permette di saltare direttamente al contenuto principale della pagina. 
+
+Inoltre, per facilitare l'utente a ritornare all'inizio della pagina è stato inserito un bottone, _scroll to top_ che permette di tornare all'inizio della pagina evitando di dover scorrere nuovamente tutto il contenuto, questo è particolarmente utile per utenti con disabilità motorie e per utenti che navigano tramite dispositivi mobile.
+
 Sempre tenendo conto degli utenti che navigano tramite screen reader, sono stati utilizzati gli attributi _lang_ per le parole in lingue straniere per consentirne la pronuncia corretta, inoltre sono stati utilizzati gli attributi _aria-label_ per facilitare la comprensione dei vari elementi della pagina, in particolare per la gestione dei messaggi di errore.
 
 L'accessibilità è stata verificata sia manualmente che tramite strumenti automatici come ad esempio _Lighthouse_ di Google Chrome, VoiceOver, Silktide, Wave Evaluation Tool e Stark 
@@ -321,34 +388,78 @@ Per garantire la compatibilità il sito è stato testato su diversi browser come
 
 Non è stata realizzata una site map in quanto il sito presenta una gerachia ampia e poco profonda che abbiamo ritenuto facilemente navigabile.
 
+
+
 == Palette colori
 
 La palette colori è stata costruita per garantire un contrasto sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi. 
 
-Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati. Siamo consapevoli che la scelta dei colori può non garantire un sufficiente contrasto tra link visitato e non visitato ma abbiamo deciso di mantere tale scelta dando priorità al contrasto tra testo e sfondo e alla coerenza tra i colori del sito.
+Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i colori dei link e delle pagine visitate sono stati scelti in modo che siano distinguibili tra loro; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati.\ 
+Siamo consapevoli che utilizzando la versione chiara potrebbe non esserci un sufficiente contrasto tra link visitato e non 
+
+Siamo consapevoli che la scelta dei colori potrebbe non garantire un sufficiente contrasto tra link visitato e non visitato quando viene utilizzato il tema chiaro ma abbiamo deciso di mantere tale scelta dando priorità al contrasto tra testo e sfondo e alla coerenza tra i colori del sito.
 
 Per costruire una prima palette di base abbiamo usato #link("https://coolors.co/"), successivamente è stata adattata per essere accessibile e in modo che i colori rispecchino il messaggio trasmesso dall'elemento a cui sono applicati. \
 Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #link("https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/")[WCAG Contrast Checker] che si basa sui requisiti di WCAG 2.2; grazie a questo strumento abbiamo constatato che la nostra palette rispetta il livello WCAG AAA.
 
 == Font
-// TODO: https://grtcalculator.com/ ???
+Abbiamo scelto i font nel il catalogo di #link("https://fonts.google.com/")[Google Font], in particolare è stato scelto *Onest* come font _sans-serif_, e *Gentium Book Plus* come font _serif_ per la pagina e per il logo.
+
+Per garantire un’esperienza visiva armoniosa e accessibile, le dimensioni dei font sono state definite utilizzando GRTCalculator, uno strumento che applica il principio della sezione aurea (≈ 1:1.618). Questa scelta progettuale si basa su tre pilastri:
+- *Armonia estetica*: è una proporzione matematicamente bilanciata, storicamente associata a forme piacevoli alla percezione umana. Crea una gerarchia tipografica coerente, dove titoli, sottotitoli e corpo del testo si relazionano in modo naturale, migliorando l’estetica generale del sito.
+
+- *Leggibilità e accessibilità*: garantisce che le proporzioni mantengano un contrasto adeguato tra testo e sfondo, rispettando i criteri WCAG.
+
+- *Responsività e coerenza*: il design rimane coerente anche su schermi con risoluzioni diverse. Questo approccio elimina la necessità di regolazioni manuali, ottimizzando il workflow di sviluppo.
+
+Per salvaguardare la compatibilità è stato usata la regola :
+```css
+@supports not (font-size: clamp(1rem, 1vi, 1rem))
+```
+nel caso in cui il browser non supporti la funzione clamp, la dimensione del font viene impostata in modo statico.
 
 == Compatibilità
+Per verificare la compatibilità il sito è stato testato sui seguenti dispositivi è browser:
+- Android 14
+  - Chrome 132.0
+  - Firefox 127.0
+- Android 13
+  - Chrome 132.0
+- Android 12
+  - Chrome 132.0
+- iOS 18.2.1
+  - Safari 17.4.1
+- MacOS Sequoia 15.2
+  - Chromium 132.0.6834.160
+- Windows 11
+  - Chrome 133.0.6943.35
+  - Firefox 134.0.2
+- Windows 10
+  - Chrome 133.0.6943.35
+  - Firefox 134.0.2
+-  Fedora 40
+  - Chromium 130.0.6723.91
+  - Firefox 133.0.3
+  - Zen Browser 1.0.2-b.2
+- ArchLinux (rolling, 2025-01-30)
+  - Zen Browser 1.0.1-a.10
+  - Firefox 133.0.3
+  - Ungoogled-Chromium 128.0.6613.113
+  - Chrome 120.0.6099.129
+
 
 = SEO
 == Scelta di keyword e description
-Lo scopo principale della piattaforma è quello di scambiare libri tra utenti, e attualmente, per questioni di implementazione, ci si rivolge all'utenza nel territorio italiano, per questo le *keyword scelte* sono: "scambio libri in Italia, libri, scambio, libri Italia, trova libri, BookOverflow".
+Lo scopo principale della piattaforma è quello di scambiare libri tra utenti, e attualmente, per questioni di implementazione, ci si rivolge all'utenza nel territorio italiano; per questo le *keyword scelte* sono: "scambio libri in Italia, libri, scambio, libri Italia, trova libri, BookOverflow".
 
-Per il tag *description* invece abbiamo individuato "BookOverflow è un sito web che
-permette di scambiare libri con altri utenti in Italia, trova subito il tuo prossimo scambio." che racchiude diverse keyword e una *call to action* stando al di sotto dei 150 caratteri.
+Per il tag *description* invece abbiamo individuato "BookOverflow è un sito web che permette di scambiare libri con altri utenti in Italia, trova subito il tuo prossimo scambio." che racchiude diverse keyword e una *call to action* stando al di sotto dei 150 caratteri.
 
 == Performance
 La velocità di caricamento è un fattore fondamentale per migliorare la SERP, per questo abbiamo deciso di compiere le seguenti azioni per migliorare la performance del sito:
-- ottimizzazione del caricamento delle immagini comprimendole in formato *.AVIF*, questo permette di ridurre il peso delle immagini mantenendo una qualità discreta;
+- ottimizzazione del caricamento delle immagini comprimendole in formato *.AVIF*, questo permette di ridurre il peso delle immagini mantenendo una qualità eccellente;
 - utilizzo di font più leggeri in formato *.woff2*;
 - *configurato il caricamento delle risorse* in HTML in modo che vengano caricati prima i font e le immagini necessarie per la visualizzazione della pagina;
 - utilizzo della clausola *_font-display: swap_* per garantire che il testo sia visibile anche se il font non è ancora stato scaricato;
-- utilizzo del tool *Google Lighthouse* per misurare le performance del sito e migliorarle;
 Non abbiamo minimizzato i file CSS e JavaScript perché la consegna richiede esplicitamente di non farlo.
 
 == Indicizzazione e alberatura
@@ -356,5 +467,75 @@ Abbiamo utilizzato il file *robots.txt* per evitare che vengano indicizzati file
 
 Per quanto riguarda l'alberatura del sito è stata tenuta il più possibile piatta mantenendo un livello di prondità massimo di 3 livelli.
 
+= Testing
+== Google Lighthouse
+Per verificare la qualità del progetto dal punto di vista della SEO abbiamo usato il tool *Google Lighthouse*.
+In questo modo abbiamo ottenuto una valutazione per le seguenti cateogrie:
+- *Performance*: in ogni pagina otteniamo un punteggio maggiore o uguale a 90 sia nella modalità desktop che in quella mobile;
+- *Accessibility*: in ogni pagina otteniamo un punteggio maggiore o uguale a 98 sia nella modalità desktop che in quella mobile;
+- *Best Practice*: in ogni pagina otteniamo un punteggio maggiore o uguale a 100 sia nella modalità desktop che in quella mobile;\  
+  Facciamo notare che il punteggio visualizzato è più basso quando il sito viene ospitato nel server del dipartimento a causa dell'utilizzo del protocollo _HTTP_ (e non _HTTPS_) su una porta diversa da `80`
+- *SEO*: in ogni pagina otteniamo un punteggio maggiore o uguale a 100 sia nella modalità desktop che in quella mobile;
+Di seguito delle foto raffiguranti i punteggi ottenuti durante i test eseguiti in locale, dove l'unica differenza è che viene _bypassato_ il controllo per l'utilizzo di HTTPS:
+#figure(
+  image("assets/imgs/homeLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Home_"
+  ],
+)
+#figure(
+  image("assets/imgs/esploraLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Esplora_"
+  ],
+)
+#figure(
+  image("assets/imgs/comefunzionaLighthouse.png", width: 100%),
+  caption: [
+    Risultati Google Lighthouse della pagina "_Come funziona_"
+  ],
+)
+
+== Total Validator
+Per garantire un’esperienza inclusiva e conforme agli standard internazionali, tutte le pagine del sito sono state sottoposte a test automatizzati tramite Total Validator. 
+
+I controlli sono stati eseguiti seguendo le linee guida WCAG 2.2 al livello più elevato (AAA), e il programma ha non rilevato errori in nessuna delle pagine.
+
+I risultati sono stati integrati con verifiche manuali tramite screen reader NVDA e VoiceOver.
+
 = Altre motiviazioni progettuali
+== Account forniti
+Vengono forniti due account, Utente e User, per poter testare tutte le funzionalità del sito.
+
 == Warning nel console log
+Abbiamo verificato che, eseguendo il progetto nel server dell'università, vengono ritornati nel console log alcuni warning riguardanti la mancanza di HTTPS nelle richieste eseguite; questo accade perché le richieste vengono fatte tramite HTTP a causa della configurazione del server stesso.
+
+= Guida installazione progetto
+== `.htaccess`
+Per il corretto funzionamento del progetto, è necessario impostare il reindirizzamento delle richieste al file `index.php`.
+
+Affinchè ciò avvenga, è sufficiente utilizzare il file `.htaccess` fornito assieme ai file del progetto, il quale ha il seguente contenuto:
+```conf
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !\.(css|jpg|jpeg|png|gif|avif|js|ttf|svg)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
+
+RewriteRule ^\.env$ index.php [L]
+```
+
+== `.env`
+I parametri di configurazione al database vanno salvati in un file `.env`, da posizionare nella cartella radice del progetto.\
+Un esempio di configurazione è il seguente:
+```
+DB_HOST=localhost
+DB_DATABASE=bookoverflow
+DB_USERNAME=test
+DB_PASSWORD=test
+PREFIX=/{{web_directory}} 
+```
+Se il sito viene ospitato in una sottocartella invece che nella cartella radice di un certo dominio/sottodominio, è importante specificare il percorso nel quale questo viene ospitato mediante la chiave `PREFIX`.\
+Questo consente al codice php di riscrivere correttamente i vari link e riferimenti presenti nel sito in modo che puntino alle risorse corrette.
+
+Se invece il sito viene ospitato nella cartella radice, tale valore può essere lasciata vuota o anche omessa dal file di configurazione. 

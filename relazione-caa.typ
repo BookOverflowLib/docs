@@ -65,12 +65,9 @@ Questa scelta non ha portato indebolimenti dal punto di vista della sicurezza da
 La ricerca dei libri da aggiungere alle liste utilizza le Google Books API.\ 
 Per fornire all'utente una *ricerca automatica* e immediata abbiamo deciso di implementare un meccanismo di _auto-fetching_ che visualizza i risultati solamente quando l'utente ha smesso di digitare per più di 0,6 secondi.
 
-// La ricerca dei libri da aggiungere alle liste sfrutta le API di Google Books per ottenere informazioni sul libro in modo *automatico*. I risultati vengono visualizzati solamente quando l'utente ha smesso di digitare per più di 600 millisecondi. \
-// In questo modo il contenuto non viene aggiornato troppo velocemente causando un *sovraccarico cognitivo* dell'utente.\ 
 Inoltre, per agevolare l'usabilità e l'accessibilità tramite screen reader, è stato aggiunto un _alert_ che notifica l'utente della ricezione dei nuovi risultati.
 
 == Navigazione
-
 Per l'orientamento dell'utente all'interno del sito è stata inserita una *_breadcrumb_* in tutte le pagine, che permette di capire in che punto della gerarchia del sito ci si trova e di tornare alle pagine di livello superiore. 
 
 Tutte le pagine sono navigabili con tastiera, in modo da renderle accessibili anche tramite *screen reader o altri dipositivi di supporto*.
@@ -83,12 +80,8 @@ Non è stata realizzata una site map in quanto il sito presenta una gerachia amp
 == Palette colori
 La palette colori è stata costruita per garantire un *contrasto* sufficiente tra i testi e lo sfondo, in modo da garantire una buona leggibilità anche a persone con disturbi visivi. 
 
-// TODO: verificare
-Per rendere i *link riconoscibili* vengono tutti sottolineati all'evento _hover_
-
-Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, i *colori dei link* e delle *pagine visitate* sono stati scelti in modo che siano distinguibili tra loro/* ; nella versione chiara i link sono di colore nero o marrone se visitati, mentre nella versione scura sono di colore bianco o marrone se visitati*/.\
-// TODO: verificare
-Inoltre, si è deciso di sottolineare tutti i link non visitati per garantire un sufficiente contrasto tra link visitato e non visitato quando viene utilizzato il tema chiaro.
+Per facilitare ulteriormente l'orientamento all'interno del sito e la creazione di una mappa mentale della struttura del sito, lo *stile dei link visitati* e *non visitati* è stato scelto in modo che siano distinguibili tra loro.\
+Nello specifico i link delle pagine non visitate sono sottolineati, dopo esser stati visitati diventano di un colore diverso e perdono la sottolineatura.
 
 Per costruire una palette di base abbiamo usato #link("https://coolors.co/"), successivamente è stata adattata per essere accessibile e per fare in modo che i colori rispecchino il messaggio trasmesso dall'elemento a cui sono applicati. \
 Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #link("https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/")[*WCAG Contrast Checker*] che si basa sui requisiti di WCAG 2.2; grazie a questo strumento abbiamo constatato che la nostra palette rispetta il livello WCAG AAA.
@@ -139,13 +132,11 @@ Di seguito una foto raffigurante i punteggi ottenuti durante i test eseguiti in 
   ],
 )
 == Total Validator
-// TODO: da controllare di nuovo
 Per garantire un’esperienza inclusiva e conforme agli standard internazionali, tutte le pagine del sito sono state sottoposte a test automatizzati tramite *Total Validator*. 
 
 I controlli sono stati eseguiti seguendo le linee guida *WCAG 2.2* al livello più elevato (*AAA*), e il programma non ha rilevato errori in nessuna delle pagine.
 
-// TODO: integrati???
-I risultati sono stati integrati con verifiche manuali tramite screen reader *NVDA* e *VoiceOver*.
+Ai controlli automatici sono state integrate verifiche manuali tramite screen reader *NVDA* e *VoiceOver*.
 
 == Compatibilità
 Per garantire la *compatibilità* il sito è stato testato su diversi sistemi operativi e browser, compresi quelli più diffusi attualmente.

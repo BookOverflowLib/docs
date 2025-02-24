@@ -89,7 +89,7 @@ Per verificare l'accessibilità dei colori è stata utilizzata l'estensione #lin
 == Font
 Abbiamo scelto i font nel catalogo di #link("https://fonts.google.com/")[Google Font], in particolare è stato scelto *Onest* come font _sans-serif_, e *Gentium Book Plus* come font _serif_ per la pagina e per il logo.
 
-Per garantire un’esperienza visiva armoniosa e accessibile, le dimensioni dei font sono state definite utilizzando _GRTCalculator_, uno strumento che applica il principio della sezione aurea (≈ 1:1.618). Questa scelta progettuale si basa su tre pilastri:
+Per garantire un'esperienza visiva armoniosa e accessibile, le dimensioni dei font sono state definite utilizzando _GRTCalculator_, uno strumento che applica il principio della sezione aurea (≈ 1:1.618). Questa scelta progettuale si basa su tre pilastri:
 - *Armonia estetica*: è una proporzione matematicamente bilanciata, storicamente associata a forme piacevoli alla percezione umana. Crea una gerarchia tipografica coerente, dove titoli, sottotitoli e corpo del testo si relazionano in modo naturale, migliorando l’estetica generale del sito.
 
 - *Leggibilità e accessibilità*: garantisce che le proporzioni mantengano un contrasto adeguato tra testo e sfondo, rispettando i criteri WCAG.
